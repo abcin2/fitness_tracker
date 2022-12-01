@@ -13,6 +13,8 @@ struct TestDataView: View {
                 ForEach(workouts) { item in
                     NavigationLink {
                         Text(item.name ?? "Nothing")
+                        Text("Sets: \(String(item.sets))")
+                        Text("Reps: \(item.reps)")
                     } label: {
                         Text(item.dateCompleted!, formatter: itemFormatter)
                     }
@@ -35,8 +37,35 @@ struct TestDataView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Workout(context: viewContext)
-            newItem.dateCompleted = Date()
+            let newWorkout = Workout(context: viewContext)
+            newWorkout.id = UUID()
+            newWorkout.dateCompleted = Date.now
+            newWorkout.category = randomString(length: 10)
+            newWorkout.name = randomString(length: 6)
+            newWorkout.length = randomDouble()
+            newWorkout.adjustment = randomInt()
+            newWorkout.freeWeightExercise = randomString(length: 15)
+            newWorkout.intensity = randomDouble()
+            newWorkout.incline = randomDouble()
+            newWorkout.weight = randomString(length: 2)
+            newWorkout.sets = randomInt()
+            newWorkout.reps = randomString(length: 2)
+            // MARK: when changing attributes, I will need to delete all items in the database. If not, I will see errors
+            
+            // functions for random data
+            func randomString(length: Int) -> String {
+                let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                return String((0..<length).map{ _ in letters.randomElement()! })
+            }
+            
+            func randomDouble() -> Double {
+                let randomDouble = Double.random(in: 0.0 ..< 60.0)
+                return round(randomDouble * 10) / 10.0
+            }
+            
+            func randomInt() -> Int16 {
+                return Int16.random(in: 0 ..< 25)
+            }
 
             do {
                 try viewContext.save()
