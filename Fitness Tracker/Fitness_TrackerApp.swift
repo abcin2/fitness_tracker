@@ -1,10 +1,3 @@
-//
-//  Fitness_TrackerApp.swift
-//  Fitness Tracker
-//
-//  Created by Robert Alec Hovey on 11/30/22.
-//
-
 import SwiftUI
 
 @main
@@ -13,8 +6,12 @@ struct Fitness_TrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // MARK: Used for testing
+            TestDataView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            // MARK: Used for prod
+            // ContentView()
+                // .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

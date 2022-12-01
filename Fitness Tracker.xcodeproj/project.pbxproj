@@ -13,6 +13,7 @@
 		33D8C0F629382BA2000B00D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D8C0F529382BA2000B00D5 /* Preview Assets.xcassets */; };
 		33D8C0F829382BA2000B00D5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C0F729382BA2000B00D5 /* Persistence.swift */; };
 		33D8C0FB29382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C0F929382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld */; };
+		33D8C1092938D96A000B00D5 /* TestDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C1082938D96A000B00D5 /* TestDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		33D8C0F729382BA2000B00D5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		33D8C0FA29382BA2000B00D5 /* Fitness_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fitness_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		33D8C0FC29382BA2000B00D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33D8C1082938D96A000B00D5 /* TestDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				33D8C10229382D30000B00D5 /* Views */,
 				33D8C0EE29382BA1000B00D5 /* Fitness_TrackerApp.swift */,
 				33D8C0F029382BA1000B00D5 /* ContentView.swift */,
+				33D8C1082938D96A000B00D5 /* TestDataView.swift */,
 				33D8C0F229382BA2000B00D5 /* Assets.xcassets */,
 				33D8C0F729382BA2000B00D5 /* Persistence.swift */,
 				33D8C0FC29382BA2000B00D5 /* Info.plist */,
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D8C0F829382BA2000B00D5 /* Persistence.swift in Sources */,
+				33D8C1092938D96A000B00D5 /* TestDataView.swift in Sources */,
 				33D8C0F129382BA1000B00D5 /* ContentView.swift in Sources */,
 				33D8C0EF29382BA1000B00D5 /* Fitness_TrackerApp.swift in Sources */,
 				33D8C0FB29382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld in Sources */,

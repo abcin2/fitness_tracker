@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  Fitness Tracker
-//
-//  Created by Robert Alec Hovey on 11/30/22.
-//
-
 import CoreData
 
 struct PersistenceController {
@@ -14,8 +7,34 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newWorkout = Workout(context: viewContext)
+            newWorkout.id = UUID()
+            newWorkout.dateCompleted = Date()
+            newWorkout.category = randomString(length: 10)
+            newWorkout.name = randomString(length: 6)
+            newWorkout.length = randomDouble()
+            newWorkout.adjustment = randomInt()
+            newWorkout.freeWeightExercise = randomString(length: 15)
+            newWorkout.intensity = randomDouble()
+            newWorkout.incline = randomDouble()
+            newWorkout.weight = randomString(length: 2)
+            newWorkout.sets = randomInt()
+            newWorkout.reps = randomString(length: 2)
+            
+            // functions for random data
+            func randomString(length: Int) -> String {
+                let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                return String((0..<length).map{ _ in letters.randomElement()! })
+            }
+            
+            func randomDouble() -> Double {
+                let randomDouble = Double.random(in: 0.0 ..< 60.0)
+                return round(randomDouble * 10) / 10.0
+            }
+            
+            func randomInt() -> Int16 {
+                return Int16.random(in: 0 ..< 25)
+            }
         }
         do {
             try viewContext.save()
