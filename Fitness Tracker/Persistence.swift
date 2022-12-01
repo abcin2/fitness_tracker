@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  Fitness Tracker
-//
-//  Created by Robert Alec Hovey on 11/30/22.
-//
-
 import CoreData
 
 struct PersistenceController {

@@ -1,10 +1,3 @@
-//
-//  Fitness_TrackerApp.swift
-//  Fitness Tracker
-//
-//  Created by Robert Alec Hovey on 11/30/22.
-//
-
 import SwiftUI
 
 @main
