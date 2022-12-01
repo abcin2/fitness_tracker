@@ -19,7 +19,7 @@ extension EditExerciseView {
         
         var timeElapsedFormatted: String = ""
         
-        func initializeDataFromCoreDataWorkout(with data: Workout1) -> Void {
+        func initializeDataFromCoreDataWorkout(with data: Workout) -> Void {
             timeElapsed = data.length
             timeElapsedFormatted = formatMmSs(counter: data.length)
             minutesElapsedString = timeElapsedFormatted.components(separatedBy: ":")[0]

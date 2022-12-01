@@ -11,7 +11,7 @@ extension ExerciseHistoryView {
             return dateFormatter.string(from: date)
         }
         
-        func uniqueDatesArray(for workouts: FetchedResults<Workout1>) -> [String] {
+        func uniqueDatesArray(for workouts: FetchedResults<Workout>) -> [String] {
             var uniqueDates: Set<String> = []
             for workout in workouts {
                 uniqueDates.insert(formatDateToString(date: workout.dateCompleted ?? Date.now))

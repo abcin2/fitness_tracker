@@ -497,8 +497,8 @@ private extension EditExerciseView {
     }
 }
 
-struct EditExerciseView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditExerciseView(workout: Workout.example)
-    }
-}
+//struct EditExerciseView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditExerciseView(workout: Workout)
+//    }
+//}
