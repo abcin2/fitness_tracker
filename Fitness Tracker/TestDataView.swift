@@ -14,7 +14,7 @@ struct TestDataView: View {
                     NavigationLink {
                         Text(item.name ?? "Nothing")
                     } label: {
-                        Text("Label")
+                        Text(item.dateCompleted!, formatter: itemFormatter)
                     }
                 }
                 .onDelete(perform: deleteItems)
