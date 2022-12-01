@@ -56,6 +56,9 @@
 		33D8C0ED29382BA1000B00D5 /* Fitness Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				33D8C10429382D3D000B00D5 /* Models */,
+				33D8C10329382D35000B00D5 /* ViewModels */,
+				33D8C10229382D30000B00D5 /* Views */,
 				33D8C0EE29382BA1000B00D5 /* Fitness_TrackerApp.swift */,
 				33D8C0F029382BA1000B00D5 /* ContentView.swift */,
 				33D8C0F229382BA2000B00D5 /* Assets.xcassets */,
@@ -73,6 +76,27 @@
 				33D8C0F529382BA2000B00D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		33D8C10229382D30000B00D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33D8C10329382D35000B00D5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		33D8C10429382D3D000B00D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
