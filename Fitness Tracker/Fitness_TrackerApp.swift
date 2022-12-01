@@ -6,8 +6,12 @@ struct Fitness_TrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // MARK: Used for testing
+            TestDataView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            // MARK: Used for prod
+            // ContentView()
+                // .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
