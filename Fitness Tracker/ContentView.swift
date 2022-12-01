@@ -8,9 +8,7 @@ struct ContentView: View {
     private var workouts: FetchedResults<Workout>
     
     var body: some View {
-        VStack {
-            Text("Nothing Yet")
-        }
+        StartScreenView()
     }
 }
 
