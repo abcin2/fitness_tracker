@@ -26,6 +26,7 @@
 		33D8C11F293965F9000B00D5 /* EditExercise+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C11A293965F9000B00D5 /* EditExercise+ViewModel.swift */; };
 		33D8C120293965F9000B00D5 /* RecordExercise+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C11B293965F9000B00D5 /* RecordExercise+ViewModel.swift */; };
 		33D8C121293965F9000B00D5 /* ExercisesList+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C11C293965F9000B00D5 /* ExercisesList+ViewModel.swift */; };
+		33D8C13D2939AAF8000B00D5 /* AttributeInputRow+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		33D8C11A293965F9000B00D5 /* EditExercise+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditExercise+ViewModel.swift"; sourceTree = "<group>"; };
 		33D8C11B293965F9000B00D5 /* RecordExercise+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordExercise+ViewModel.swift"; sourceTree = "<group>"; };
 		33D8C11C293965F9000B00D5 /* ExercisesList+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExercisesList+ViewModel.swift"; sourceTree = "<group>"; };
+		33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputRow+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				33D8C10F293965D0000B00D5 /* Dashboard+View.swift */,
 				33D8C10E293965D0000B00D5 /* EditExercise+View.swift */,
 				33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */,
+				33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */,
 				33D8C110293965D0000B00D5 /* ExercisesList+View.swift */,
 				33D8C10C293965D0000B00D5 /* RecordExercise+View.swift */,
 				33D8C12229398AFB000B00D5 /* RecordExercise */,
@@ -233,6 +236,7 @@
 				33D8C0FB29382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld in Sources */,
 				33D8C112293965D0000B00D5 /* RecordExercise+View.swift in Sources */,
 				33D8C11E293965F9000B00D5 /* Dashboard+ViewModel.swift in Sources */,
+				33D8C13D2939AAF8000B00D5 /* AttributeInputRow+View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
