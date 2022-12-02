@@ -4,8 +4,10 @@ import SwiftUI
 extension EditExerciseView {
     var coreMachines: some View {
         VStack {
-            Divider()
-            if workout.name == "Crunch Machine" || workout.name == "Torso Rotation" {
+            Divider() // this divider is to separate the view from the nav bar
+            // switch case here instead
+            switch workout.name {
+            case coreMachinesName.crunchMachine, coreMachinesName.torsoRotation:
                 HStack {
                     Section(header: Text("Weight").frame(maxWidth: .infinity, alignment: .leading)) {
                         TextField("Weight", text: $viewModel.weight)
@@ -33,7 +35,7 @@ extension EditExerciseView {
                     .padding(.horizontal)
                     .padding(.vertical, -3)
                 }
-            } else {
+            default:
                 HStack {
                     Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
@@ -46,6 +48,7 @@ extension EditExerciseView {
                     .padding(.vertical, -3)
                 }
             }
+            // switch case here instead
             Divider()
             HStack {
                 Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
@@ -71,6 +74,16 @@ extension EditExerciseView {
                 .padding(.vertical, -3)
             }
             Divider()
+            // end of code block here
+            // still need to split some things out
         }
+    }
+    
+    enum coreMachinesName {
+        case crunchMachine = "Crunch Machine"
+        case torsoRotation = "Torso Rotation"
+        case mountainClimberMachine = "Mountain Climber Machine"
+        case declineBench = "Decline Bench"
+        case hangingLegRaiseStation = "Hanging Leg Raise Station"
     }
 }
