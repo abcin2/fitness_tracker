@@ -471,22 +471,22 @@ private extension RecordExerciseView {
                         viewModel.cancelSaveWorkout()
                     }
                     Button("YES", role: .cancel) {
-//                        let workout = Workout(context: moc)
-//                        workout.id = UUID()
-//                        workout.category = viewModel.findCategory(for: exercise)
-//                        workout.name = exercise
-//                        workout.freeWeightExercise = viewModel.freeWeightExercise
-//                        workout.weight = viewModel.weight
-//                        workout.adjustment = viewModel.machineSetting
-//                        workout.incline = viewModel.inclineLevel
-//                        workout.intensity = viewModel.intensityLevel
-//                        workout.length = viewModel.secondsElapsed
-//                        workout.dateCompleted = Date.now
-//                        workout.reps = viewModel.reps
-//                        workout.sets = viewModel.sets
-//                        try? moc.save()
-//                        viewModel.confirmSaveWorkout()
-//                        presentationMode.wrappedValue.dismiss()
+                        let workout = Workout(context: moc)
+                        workout.id = UUID()
+                        workout.category = viewModel.findCategory(for: exercise)
+                        workout.name = exercise
+                        workout.freeWeightExercise = viewModel.freeWeightExercise
+                        workout.weight = viewModel.weight
+                        workout.adjustment = viewModel.machineSetting
+                        workout.incline = viewModel.inclineLevel
+                        workout.intensity = viewModel.intensityLevel
+                        workout.length = viewModel.secondsElapsed
+                        workout.dateCompleted = Date.now
+                        workout.reps = viewModel.reps
+                        workout.sets = viewModel.sets
+                        try? moc.save()
+                        viewModel.confirmSaveWorkout()
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }
                 Button(action: {
