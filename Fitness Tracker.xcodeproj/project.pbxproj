@@ -113,6 +113,7 @@
 				33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */,
 				33D8C110293965D0000B00D5 /* ExercisesList+View.swift */,
 				33D8C10C293965D0000B00D5 /* RecordExercise+View.swift */,
+				33D8C12229398AFB000B00D5 /* RecordExercise */,
 				33D8C10D293965D0000B00D5 /* StartScreen+View.swift */,
 			);
 			path = Views;
@@ -136,6 +137,13 @@
 				33D8C10A29396537000B00D5 /* Exercises+Model.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		33D8C12229398AFB000B00D5 /* RecordExercise */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecordExercise;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
