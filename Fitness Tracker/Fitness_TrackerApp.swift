@@ -7,11 +7,11 @@ struct Fitness_TrackerApp: App {
     var body: some Scene {
         WindowGroup {
             // MARK: Used for testing
-            TestDataView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            TestDataView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             // MARK: Used for prod
-            // ContentView()
-                // .environment(\.managedObjectContext, persistenceController.container.viewContext)
+             ContentView()
+                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

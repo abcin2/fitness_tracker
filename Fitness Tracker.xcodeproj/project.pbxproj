@@ -14,6 +14,18 @@
 		33D8C0F829382BA2000B00D5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C0F729382BA2000B00D5 /* Persistence.swift */; };
 		33D8C0FB29382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C0F929382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld */; };
 		33D8C1092938D96A000B00D5 /* TestDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C1082938D96A000B00D5 /* TestDataView.swift */; };
+		33D8C10B29396537000B00D5 /* Exercises+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C10A29396537000B00D5 /* Exercises+Model.swift */; };
+		33D8C112293965D0000B00D5 /* RecordExercise+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C10C293965D0000B00D5 /* RecordExercise+View.swift */; };
+		33D8C113293965D0000B00D5 /* StartScreen+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C10D293965D0000B00D5 /* StartScreen+View.swift */; };
+		33D8C114293965D0000B00D5 /* EditExercise+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C10E293965D0000B00D5 /* EditExercise+View.swift */; };
+		33D8C115293965D0000B00D5 /* Dashboard+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C10F293965D0000B00D5 /* Dashboard+View.swift */; };
+		33D8C116293965D0000B00D5 /* ExercisesList+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C110293965D0000B00D5 /* ExercisesList+View.swift */; };
+		33D8C117293965D0000B00D5 /* ExerciseHistory+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */; };
+		33D8C11D293965F9000B00D5 /* ExerciseHistory+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C118293965F9000B00D5 /* ExerciseHistory+ViewModel.swift */; };
+		33D8C11E293965F9000B00D5 /* Dashboard+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C119293965F9000B00D5 /* Dashboard+ViewModel.swift */; };
+		33D8C11F293965F9000B00D5 /* EditExercise+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C11A293965F9000B00D5 /* EditExercise+ViewModel.swift */; };
+		33D8C120293965F9000B00D5 /* RecordExercise+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C11B293965F9000B00D5 /* RecordExercise+ViewModel.swift */; };
+		33D8C121293965F9000B00D5 /* ExercisesList+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C11C293965F9000B00D5 /* ExercisesList+ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +38,18 @@
 		33D8C0FA29382BA2000B00D5 /* Fitness_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fitness_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		33D8C0FC29382BA2000B00D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33D8C1082938D96A000B00D5 /* TestDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataView.swift; sourceTree = "<group>"; };
+		33D8C10A29396537000B00D5 /* Exercises+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercises+Model.swift"; sourceTree = "<group>"; };
+		33D8C10C293965D0000B00D5 /* RecordExercise+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordExercise+View.swift"; sourceTree = "<group>"; };
+		33D8C10D293965D0000B00D5 /* StartScreen+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StartScreen+View.swift"; sourceTree = "<group>"; };
+		33D8C10E293965D0000B00D5 /* EditExercise+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditExercise+View.swift"; sourceTree = "<group>"; };
+		33D8C10F293965D0000B00D5 /* Dashboard+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dashboard+View.swift"; sourceTree = "<group>"; };
+		33D8C110293965D0000B00D5 /* ExercisesList+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExercisesList+View.swift"; sourceTree = "<group>"; };
+		33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseHistory+View.swift"; sourceTree = "<group>"; };
+		33D8C118293965F9000B00D5 /* ExerciseHistory+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseHistory+ViewModel.swift"; sourceTree = "<group>"; };
+		33D8C119293965F9000B00D5 /* Dashboard+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dashboard+ViewModel.swift"; sourceTree = "<group>"; };
+		33D8C11A293965F9000B00D5 /* EditExercise+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditExercise+ViewModel.swift"; sourceTree = "<group>"; };
+		33D8C11B293965F9000B00D5 /* RecordExercise+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecordExercise+ViewModel.swift"; sourceTree = "<group>"; };
+		33D8C11C293965F9000B00D5 /* ExercisesList+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExercisesList+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +108,12 @@
 		33D8C10229382D30000B00D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33D8C10F293965D0000B00D5 /* Dashboard+View.swift */,
+				33D8C10E293965D0000B00D5 /* EditExercise+View.swift */,
+				33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */,
+				33D8C110293965D0000B00D5 /* ExercisesList+View.swift */,
+				33D8C10C293965D0000B00D5 /* RecordExercise+View.swift */,
+				33D8C10D293965D0000B00D5 /* StartScreen+View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -91,6 +121,11 @@
 		33D8C10329382D35000B00D5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				33D8C119293965F9000B00D5 /* Dashboard+ViewModel.swift */,
+				33D8C11A293965F9000B00D5 /* EditExercise+ViewModel.swift */,
+				33D8C118293965F9000B00D5 /* ExerciseHistory+ViewModel.swift */,
+				33D8C11C293965F9000B00D5 /* ExercisesList+ViewModel.swift */,
+				33D8C11B293965F9000B00D5 /* RecordExercise+ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -98,6 +133,7 @@
 		33D8C10429382D3D000B00D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				33D8C10A29396537000B00D5 /* Exercises+Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,11 +208,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D8C114293965D0000B00D5 /* EditExercise+View.swift in Sources */,
+				33D8C121293965F9000B00D5 /* ExercisesList+ViewModel.swift in Sources */,
 				33D8C0F829382BA2000B00D5 /* Persistence.swift in Sources */,
+				33D8C116293965D0000B00D5 /* ExercisesList+View.swift in Sources */,
 				33D8C1092938D96A000B00D5 /* TestDataView.swift in Sources */,
 				33D8C0F129382BA1000B00D5 /* ContentView.swift in Sources */,
+				33D8C117293965D0000B00D5 /* ExerciseHistory+View.swift in Sources */,
+				33D8C11D293965F9000B00D5 /* ExerciseHistory+ViewModel.swift in Sources */,
+				33D8C120293965F9000B00D5 /* RecordExercise+ViewModel.swift in Sources */,
+				33D8C10B29396537000B00D5 /* Exercises+Model.swift in Sources */,
 				33D8C0EF29382BA1000B00D5 /* Fitness_TrackerApp.swift in Sources */,
+				33D8C11F293965F9000B00D5 /* EditExercise+ViewModel.swift in Sources */,
+				33D8C113293965D0000B00D5 /* StartScreen+View.swift in Sources */,
+				33D8C115293965D0000B00D5 /* Dashboard+View.swift in Sources */,
 				33D8C0FB29382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld in Sources */,
+				33D8C112293965D0000B00D5 /* RecordExercise+View.swift in Sources */,
+				33D8C11E293965F9000B00D5 /* Dashboard+ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

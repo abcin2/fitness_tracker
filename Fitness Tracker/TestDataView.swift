@@ -14,7 +14,7 @@ struct TestDataView: View {
                     NavigationLink {
                         Text(item.name ?? "Nothing")
                         Text("Sets: \(String(item.sets))")
-                        Text("Reps: \(item.reps)")
+                        Text("Reps: \(item.reps ?? "Nothing")")
                     } label: {
                         Text(item.dateCompleted!, formatter: itemFormatter)
                     }
