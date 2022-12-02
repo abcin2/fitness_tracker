@@ -124,7 +124,6 @@
 				33D8C10E293965D0000B00D5 /* EditExercise+View.swift */,
 				33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */,
 				33D8C110293965D0000B00D5 /* ExercisesList+View.swift */,
-				33D8C10C293965D0000B00D5 /* RecordExercise+View.swift */,
 				33D8C12229398AFB000B00D5 /* RecordExercise */,
 				33D8C10D293965D0000B00D5 /* StartScreen+View.swift */,
 			);
@@ -154,6 +153,7 @@
 		33D8C12229398AFB000B00D5 /* RecordExercise */ = {
 			isa = PBXGroup;
 			children = (
+				33D8C10C293965D0000B00D5 /* RecordExercise+View.swift */,
 				33D8C12329398FAE000B00D5 /* RecordExercise+CardioMachines+View.swift */,
 				33D8C1252939903D000B00D5 /* RecordExercise+ASCMachines+View.swift */,
 				33D8C127293990B4000B00D5 /* RecordExercise+LegMachines+View.swift */,
