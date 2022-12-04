@@ -79,7 +79,7 @@ extension EditExerciseView {
         }
     }
     
-    enum coreMachinesName {
+    enum coreMachinesName: String {
         case crunchMachine = "Crunch Machine"
         case torsoRotation = "Torso Rotation"
         case mountainClimberMachine = "Mountain Climber Machine"
