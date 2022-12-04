@@ -20,8 +20,9 @@ extension EditExerciseView {
                 }
                 .padding(.horizontal)
             }
-            if workout.name == "Row Machine" {
-                Divider()
+            Divider()
+            switch workout.name {
+            case ASCMachinesName.rowMachine.rawValue:
                 HStack {
                     Section(header: Text("Chest Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
@@ -45,7 +46,19 @@ extension EditExerciseView {
                     .padding(.horizontal)
                     .padding(.vertical, -3)
                 }
-            } else {
+                Divider()
+            default:
+                HStack {
+                    Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
+                        Picker("Machine Setting", selection: $viewModel.machineSetting) {
+                            ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                                Text("\(number)")
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, -3)
+                }
                 Divider()
                 HStack {
                     Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
@@ -58,44 +71,44 @@ extension EditExerciseView {
                     .padding(.horizontal)
                     .padding(.vertical, -3)
                 }
-            }
-            Divider()
-            HStack {
-                Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
-                    Picker("Machine Setting", selection: $viewModel.machineSetting) {
-                        ForEach(viewModel.oneThroughTen, id: \.self) { number in
-                            Text("\(number)")
+                Divider()
+                HStack {
+                    Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
+                        Picker("Sets", selection: $viewModel.sets) {
+                            ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                                Text("\(number)")
+                            }
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.vertical, -3)
                 }
-                .padding(.horizontal)
-                .padding(.vertical, -3)
-            }
-            Divider()
-            HStack {
-                Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
-                    Picker("Sets", selection: $viewModel.sets) {
-                        ForEach(viewModel.oneThroughTen, id: \.self) { number in
-                            Text("\(number)")
+                Divider()
+                HStack {
+                    Section(header: Text("Reps").frame(maxWidth: .infinity, alignment: .leading)) {
+                        Picker("Reps", selection: $viewModel.reps) {
+                            ForEach(viewModel.repOptions, id: \.self) { number in
+                                Text("\(number)")
+                            }
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.vertical, -3)
                 }
-                .padding(.horizontal)
-                .padding(.vertical, -3)
+                Divider()
             }
-            Divider()
-            HStack {
-                Section(header: Text("Reps").frame(maxWidth: .infinity, alignment: .leading)) {
-                    Picker("Reps", selection: $viewModel.reps) {
-                        ForEach(viewModel.repOptions, id: \.self) { number in
-                            Text("\(number)")
-                        }
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.vertical, -3)
-            }
-            Divider()
         }
+    }
+    
+    enum ASCMachinesName: String {
+        case bicepCurlStation = "Bicep Curl Station"
+        case shoulderPress = "Shoulder Press"
+        case bicepAndTricepCableCar = "Bicep and Tricep Cable Car"
+        case chestPress = "Chest Press"
+        case lateralPullDownMachine = "Lateral Pull-down Machine"
+        case butterflyMachine = "Butterfly Machine"
+        case inclinePress = "Incline Press"
+        case rowMachine = "Row Machine"
+        case tricepsPress = "Triceps Press"
     }
 }

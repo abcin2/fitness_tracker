@@ -5,7 +5,8 @@ extension EditExerciseView {
     var other: some View {
         VStack {
             Divider()
-            if workout.name == "Freeweights" {
+            switch workout.name {
+            case othersName.freeweights.rawValue:
                 HStack {
                     Section(header: Text("Exercise/Muscles").frame(maxWidth: .infinity, alignment: .leading)) {
                         TextField("Exercise/Muscles", text: $viewModel.freeWeightExercise)
@@ -53,8 +54,19 @@ extension EditExerciseView {
                     .padding(.horizontal)
                     .padding(.vertical, -3)
                 }
+                Divider()
+            default:
+                EmptyView()
             }
-            Divider()
         }
+    }
+    
+    enum othersName: String {
+        case freeweights = "Freeweights"
+        case walking = "Walking"
+        case running = "Running"
+        case hiking = "Hiking"
+        case yoga = "Yoga"
+        case stretching = "Stretching"
     }
 }
