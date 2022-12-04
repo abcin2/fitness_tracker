@@ -7,7 +7,7 @@ extension EditExerciseView {
             Divider() // this divider is to separate the view from the nav bar
             // switch case here instead
             switch workout.name {
-            case coreMachinesName.crunchMachine, coreMachinesName.torsoRotation:
+            case coreMachinesName.crunchMachine.rawValue, coreMachinesName.torsoRotation.rawValue:
                 HStack {
                     Section(header: Text("Weight").frame(maxWidth: .infinity, alignment: .leading)) {
                         TextField("Weight", text: $viewModel.weight)
