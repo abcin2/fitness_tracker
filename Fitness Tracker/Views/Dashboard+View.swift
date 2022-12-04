@@ -12,7 +12,7 @@ struct DashboardView: View {
             List {
                 Section(header: Text("Frequently Recorded:")) {
                     ForEach(viewModel.topThreeWorkouts(workouts: workouts), id: \.self) { workout in
-                        NavigationLink(destination: RecordExerciseView(exercise: workout)) {
+                        NavigationLink(destination: RecordExerciseView(workout: workout)) {
                             Text(workout)
                         }
                     }

@@ -66,4 +66,12 @@ extension RecordExerciseView {
             Divider()
         }
     }
+    
+    enum legMachinesName: String {
+        case seatedLegPress = "Seated Leg Press"
+        case angledLegCurlMachine = "Angled Leg Curl Machine"
+        case legExtensionMachine = "Leg Extension Machine"
+        case sledPush = "Sled Push"
+        case calfExtension = "Calf Extension"
+    }
 }

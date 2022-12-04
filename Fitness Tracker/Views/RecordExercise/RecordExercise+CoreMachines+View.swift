@@ -5,7 +5,8 @@ extension RecordExerciseView {
     var coreMachines: some View {
         VStack {
             Divider()
-            if exercise == "Crunch Machine" || exercise == "Torso Rotation" {
+            switch workout {
+            case coreMachinesName.crunchMachine.rawValue, coreMachinesName.torsoRotation.rawValue:
                 HStack {
                     Section(header: Text("Weight").frame(maxWidth: .infinity, alignment: .leading)) {
                         TextField("Weight", text: $viewModel.weight)
@@ -38,7 +39,8 @@ extension RecordExerciseView {
                     .padding(.horizontal)
                     .padding(.vertical, -3)
                 }
-            } else {
+                Divider()
+            default:
                 HStack {
                     Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
@@ -51,8 +53,8 @@ extension RecordExerciseView {
                     .padding(.horizontal)
                     .padding(.vertical, -3)
                 }
+                Divider()
             }
-            Divider()
             HStack {
                 Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
                     Picker("Sets", selection: $viewModel.sets) {
@@ -80,5 +82,13 @@ extension RecordExerciseView {
             }
             Divider()
         }
+    }
+    
+    enum coreMachinesName: String {
+        case crunchMachine = "Crunch Machine"
+        case torsoRotation = "Torso Rotation"
+        case mountainClimberMachine = "Mountain Climber Machine"
+        case declineBench = "Decline Bench"
+        case hangingLegRaiseStation = "Hanging Leg Raise Station"
     }
 }

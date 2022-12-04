@@ -5,10 +5,10 @@ struct RecordExerciseView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel = ViewModel()
-    @State var exercise: String
+    @State var workout: String
     var body: some View {
         VStack {
-            switch viewModel.findCategory(for: exercise) {
+            switch viewModel.findCategory(for: workout) {
             case "Cardio Machines":
                 cardioMachines
             case "Arm, Shoulder & Chest Machines":
@@ -27,7 +27,7 @@ struct RecordExerciseView: View {
                 .padding()
             Spacer()
         }
-        .navigationTitle(exercise)
+        .navigationTitle(workout)
         .padding(.top, 25)
         .onTapGesture {
             viewModel.hideKeyboard()
@@ -45,6 +45,6 @@ private extension RecordExerciseView {
 
 struct RecordExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordExerciseView(exercise: "Freeweights")
+        RecordExerciseView(workout: "Freeweights")
     }
 }

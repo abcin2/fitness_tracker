@@ -72,31 +72,31 @@ extension EditExerciseView {
                     .padding(.vertical, -3)
                 }
                 Divider()
-                HStack {
-                    Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
-                        Picker("Sets", selection: $viewModel.sets) {
-                            ForEach(viewModel.oneThroughTen, id: \.self) { number in
-                                Text("\(number)")
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                    .padding(.vertical, -3)
-                }
-                Divider()
-                HStack {
-                    Section(header: Text("Reps").frame(maxWidth: .infinity, alignment: .leading)) {
-                        Picker("Reps", selection: $viewModel.reps) {
-                            ForEach(viewModel.repOptions, id: \.self) { number in
-                                Text("\(number)")
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                    .padding(.vertical, -3)
-                }
-                Divider()
             }
+            HStack {
+                Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
+                    Picker("Sets", selection: $viewModel.sets) {
+                        ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                            Text("\(number)")
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.vertical, -3)
+            }
+            Divider()
+            HStack {
+                Section(header: Text("Reps").frame(maxWidth: .infinity, alignment: .leading)) {
+                    Picker("Reps", selection: $viewModel.reps) {
+                        ForEach(viewModel.repOptions, id: \.self) { number in
+                            Text("\(number)")
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.vertical, -3)
+            }
+            Divider()
         }
     }
     

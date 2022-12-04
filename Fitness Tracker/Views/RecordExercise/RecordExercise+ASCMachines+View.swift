@@ -23,8 +23,9 @@ extension RecordExerciseView {
                 }
                 .padding(.trailing)
             }
-            if exercise == "Row Machine" {
-                Divider()
+            Divider()
+            switch workout {
+            case ASCMachinesName.rowMachine.rawValue:
                 HStack {
                     Section(header: Text("Chest Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
@@ -50,8 +51,8 @@ extension RecordExerciseView {
                     .padding(.horizontal)
                     .padding(.vertical, -3)
                 }
-            } else {
                 Divider()
+            default:
                 HStack {
                     Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
@@ -64,8 +65,8 @@ extension RecordExerciseView {
                     .padding(.horizontal)
                     .padding(.vertical, -3)
                 }
+                Divider()
             }
-            Divider()
             HStack {
                 Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
                     Picker("Sets", selection: $viewModel.sets) {
@@ -93,5 +94,17 @@ extension RecordExerciseView {
             }
             Divider()
         }
+    }
+    
+    enum ASCMachinesName: String {
+        case bicepCurlStation = "Bicep Curl Station"
+        case shoulderPress = "Shoulder Press"
+        case bicepAndTricepCableCar = "Bicep and Tricep Cable Car"
+        case chestPress = "Chest Press"
+        case lateralPullDownMachine = "Lateral Pull-down Machine"
+        case butterflyMachine = "Butterfly Machine"
+        case inclinePress = "Incline Press"
+        case rowMachine = "Row Machine"
+        case tricepsPress = "Triceps Press"
     }
 }

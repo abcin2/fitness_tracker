@@ -57,19 +57,19 @@ extension RecordExerciseView {
                         viewModel.cancelSaveWorkout()
                     }
                     Button("YES", role: .cancel) {
-                        let workout = Workout(context: moc)
-                        workout.id = UUID()
-                        workout.category = viewModel.findCategory(for: exercise)
-                        workout.name = exercise
-                        workout.freeWeightExercise = viewModel.freeWeightExercise
-                        workout.weight = viewModel.weight
-                        workout.adjustment = viewModel.machineSetting
-                        workout.incline = viewModel.inclineLevel
-                        workout.intensity = viewModel.intensityLevel
-                        workout.length = viewModel.secondsElapsed
-                        workout.dateCompleted = Date.now
-                        workout.reps = viewModel.reps
-                        workout.sets = viewModel.sets
+                        let exercise = Workout(context: moc)
+                        exercise.id = UUID()
+                        exercise.category = viewModel.findCategory(for: workout)
+                        exercise.name = workout
+                        exercise.freeWeightExercise = viewModel.freeWeightExercise
+                        exercise.weight = viewModel.weight
+                        exercise.adjustment = viewModel.machineSetting
+                        exercise.incline = viewModel.inclineLevel
+                        exercise.intensity = viewModel.intensityLevel
+                        exercise.length = viewModel.secondsElapsed
+                        exercise.dateCompleted = Date.now
+                        exercise.reps = viewModel.reps
+                        exercise.sets = viewModel.sets
                         try? moc.save()
                         viewModel.confirmSaveWorkout()
                         presentationMode.wrappedValue.dismiss()

@@ -5,7 +5,8 @@ extension RecordExerciseView {
     var cardioMachines: some View {
         VStack {
             Divider()
-            if exercise == "Treadmill" {
+            switch workout {
+            case cardioMachinesName.treadmill.rawValue:
                 HStack {
                     Section(header: Text("Intensity Level").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Intensity Level", selection: $viewModel.intensityLevel) {
@@ -32,8 +33,7 @@ extension RecordExerciseView {
                     .padding(.vertical, -3)
                 }
                 Divider()
-            }
-            if exercise.contains("Bike") {
+            case cardioMachinesName.recumbentBike.rawValue, cardioMachinesName.stationaryBike.rawValue:
                 HStack {
                     Section(header: Text("Intensity Level").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Intensity Level", selection: $viewModel.intensityLevel) {
@@ -60,7 +60,30 @@ extension RecordExerciseView {
                     .padding(.vertical, -3)
                 }
                 Divider()
+            default:
+                HStack {
+                    Section(header: Text("Intensity Level").frame(maxWidth: .infinity, alignment: .leading)) {
+                        Picker("Intensity Level", selection: $viewModel.intensityLevel) {
+                            ForEach(viewModel.intensityLevels, id: \.self) { number in
+                                Text("\(number, specifier: "%.1f")")
+                            }
+                        }
+                        .disabled(viewModel.fieldsDisabled)
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, -3)
+                }
+                Divider()
             }
         }
+    }
+    
+    enum cardioMachinesName: String {
+        case treadmill = "Treadmill"
+        case elliptical = "Elliptical"
+        case stairclimber = "Stairclimber"
+        case stationaryBike = "Stationary Bike"
+        case recumbentBike = "Recumbent Bike"
+        case arcTrainer = "ARC Trainer"
     }
 }

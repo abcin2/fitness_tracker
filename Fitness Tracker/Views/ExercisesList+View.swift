@@ -8,7 +8,7 @@ struct ExercisesListView: View {
                 ForEach(viewModel.searchResults, id: \.self) { data in
                     Section(header: Text(data.exerciseCategory)) {
                         ForEach(data.exercisesOptions, id: \.self) { exc in
-                            NavigationLink(destination: RecordExerciseView(exercise: exc)) {
+                            NavigationLink(destination: RecordExerciseView(workout: exc)) {
                                 Text(exc)
                             }
                         }
