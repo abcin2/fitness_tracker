@@ -37,6 +37,7 @@
 		33D8C1372939A563000B00D5 /* EditExercise+CoreMachines+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C1362939A563000B00D5 /* EditExercise+CoreMachines+View.swift */; };
 		33D8C1392939A5A1000B00D5 /* EditExercise+Other+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */; };
 		33D8C13B2939A69E000B00D5 /* EditExercise+Timer+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */; };
+		33D8C13F293D2B3E000B00D5 /* RecordExercise+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		33D8C1362939A563000B00D5 /* EditExercise+CoreMachines+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+CoreMachines+View.swift"; sourceTree = "<group>"; };
 		33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Other+View.swift"; sourceTree = "<group>"; };
 		33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Timer+View.swift"; sourceTree = "<group>"; };
+		33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RecordExercise+View.swift"; path = "Fitness Tracker/Views/RecordExercise/RecordExercise+View.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		33D8C12229398AFB000B00D5 /* RecordExercise */ = {
 			isa = PBXGroup;
 			children = (
+				33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */,
 				33D8C12329398FAE000B00D5 /* RecordExercise+CardioMachines+View.swift */,
 				33D8C1252939903D000B00D5 /* RecordExercise+ASCMachines+View.swift */,
 				33D8C127293990B4000B00D5 /* RecordExercise+LegMachines+View.swift */,
@@ -272,6 +275,7 @@
 				33D8C117293965D0000B00D5 /* ExerciseHistory+View.swift in Sources */,
 				33D8C11D293965F9000B00D5 /* ExerciseHistory+ViewModel.swift in Sources */,
 				33D8C1262939903D000B00D5 /* RecordExercise+ASCMachines+View.swift in Sources */,
+				33D8C13F293D2B3E000B00D5 /* RecordExercise+View.swift in Sources */,
 				33D8C120293965F9000B00D5 /* RecordExercise+ViewModel.swift in Sources */,
 				33D8C12E29399259000B00D5 /* RecordExercise+Timer+View.swift in Sources */,
 				33D8C10B29396537000B00D5 /* Exercises+Model.swift in Sources */,
