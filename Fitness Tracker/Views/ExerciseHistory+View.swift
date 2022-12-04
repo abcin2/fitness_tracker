@@ -39,6 +39,6 @@ struct ExerciseHistoryView: View {
 
 struct ExerciseHistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseHistoryView()
+        ExerciseHistoryView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
