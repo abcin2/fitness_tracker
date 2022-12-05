@@ -4,8 +4,7 @@ import SwiftUI
 extension EditExerciseView {
     var coreMachines: some View {
         VStack {
-            Divider() // this divider is to separate the view from the nav bar
-            // switch case here instead
+            Divider()
             switch workout.name {
             case coreMachinesName.crunchMachine.rawValue, coreMachinesName.torsoRotation.rawValue:
                 HStack {
@@ -27,7 +26,7 @@ extension EditExerciseView {
                 HStack {
                     Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
-                            ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                            ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
                                 Text("\(number)")
                             }
                         }
@@ -39,7 +38,7 @@ extension EditExerciseView {
                 HStack {
                     Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
-                            ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                            ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
                                 Text("\(number)")
                             }
                         }
@@ -53,7 +52,7 @@ extension EditExerciseView {
             HStack {
                 Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
                     Picker("Sets", selection: $viewModel.sets) {
-                        ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                        ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
                             Text("\(number)")
                         }
                     }

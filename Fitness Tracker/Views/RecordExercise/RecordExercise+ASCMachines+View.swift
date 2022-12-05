@@ -29,7 +29,7 @@ extension RecordExerciseView {
                 HStack {
                     Section(header: Text("Chest Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
-                            ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                            ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
                                 Text("\(number)")
                             }
                         }
@@ -42,7 +42,7 @@ extension RecordExerciseView {
                 HStack {
                     Section(header: Text("Seat Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
-                            ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                            ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
                                 Text("\(number)")
                             }
                         }
@@ -56,7 +56,7 @@ extension RecordExerciseView {
                 HStack {
                     Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Machine Setting", selection: $viewModel.machineSetting) {
-                            ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                            ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
                                 Text("\(number)")
                             }
                         }
@@ -70,7 +70,7 @@ extension RecordExerciseView {
             HStack {
                 Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
                     Picker("Sets", selection: $viewModel.sets) {
-                        ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                        ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
                             Text("\(number)")
                         }
                     }

@@ -10,7 +10,7 @@ extension EditExerciseView {
                 HStack {
                     Section(header: Text("Intensity Level").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Intensity Level", selection: $viewModel.intensityLevel) {
-                            ForEach(viewModel.intensityLevels, id: \.self) { number in
+                            ForEach(viewModel.createDoubleArr(from: 1.0, through: 20.0, by: 0.1), id: \.self) { number in
                                 Text("\(number, specifier: "%.1f")")
                             }
                         }
@@ -22,8 +22,8 @@ extension EditExerciseView {
                 HStack {
                     Section(header: Text("Incline Level").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Incline Level", selection: $viewModel.inclineLevel) {
-                            ForEach(viewModel.treadmillInclineLevels, id: \.self) { number in
-                                Text("\(number)")
+                            ForEach(viewModel.createDoubleArr(from: 0.0, through: 20.0, by: 0.5), id: \.self) { number in
+                                Text("\(number, specifier: "%.1f")")
                             }
                         }
                     }
@@ -35,7 +35,7 @@ extension EditExerciseView {
                 HStack {
                     Section(header: Text("Intensity Level").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Intensity Level", selection: $viewModel.bikeIntensityLevel) {
-                            ForEach(viewModel.bikeIntensityLevels, id: \.self) { number in
+                            ForEach(viewModel.createIntArr(from: 1, through: 50, by: 1), id: \.self) { number in
                                 Text("\(number)")
                             }
                         }
@@ -47,7 +47,7 @@ extension EditExerciseView {
                 HStack {
                     Section(header: Text("Seat Height").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Seat Height", selection: $viewModel.machineSetting) {
-                            ForEach(viewModel.bikeSeatHeight, id: \.self) { number in
+                            ForEach(viewModel.createIntArr(from: 1, through: 25, by: 1), id: \.self) { number in
                                 Text("\(number)")
                             }
                         }
@@ -60,7 +60,7 @@ extension EditExerciseView {
                 HStack {
                     Section(header: Text("Intensity Level").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Intensity Level", selection: $viewModel.intensityLevel) {
-                            ForEach(viewModel.intensityLevels, id: \.self) { number in
+                            ForEach(viewModel.createDoubleArr(from: 1.0, through: 20.0, by: 0.1), id: \.self) { number in
                                 Text("\(number, specifier: "%.1f")")
                             }
                         }
