@@ -40,6 +40,20 @@ extension RecordExerciseView {
                     .padding(.vertical, -3)
                 }
                 Divider()
+            case legMachinesName.calfExtension.rawValue:
+                HStack {
+                    Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
+                        Picker("Machine Setting", selection: $viewModel.machineSetting) {
+                            ForEach(viewModel.createIntArr(from: 1, through: 5, by: 1), id: \.self) { number in
+                                Text("\(number)")
+                            }
+                        }
+                        .disabled(viewModel.fieldsDisabled)
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, -3)
+                }
+                Divider()
             default:
                 HStack {
                     Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
