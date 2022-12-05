@@ -34,9 +34,9 @@ extension EditExerciseView {
             case cardioMachinesName.recumbentBike.rawValue, cardioMachinesName.stationaryBike.rawValue:
                 HStack {
                     Section(header: Text("Intensity Level").frame(maxWidth: .infinity, alignment: .leading)) {
-                        Picker("Intensity Level", selection: $viewModel.intensityLevel) {
+                        Picker("Intensity Level", selection: $viewModel.bikeIntensityLevel) {
                             ForEach(viewModel.bikeIntensityLevels, id: \.self) { number in
-                                Text("\(number, specifier: "%.1f")")
+                                Text("\(number)")
                             }
                         }
                     }

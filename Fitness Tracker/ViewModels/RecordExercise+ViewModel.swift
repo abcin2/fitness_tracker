@@ -98,6 +98,7 @@ extension RecordExerciseView {
         let data = ExercisesListView().viewModel.data
         
         @Published var intensityLevel: Double = 1.0
+        @Published var bikeIntensityLevel: Int16 = 1
         @Published var inclineLevel: Double = 0.0
         @Published var machineSetting: Int16 = 1
         @Published var weight: String = "10"
