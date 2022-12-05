@@ -101,6 +101,22 @@ extension EditExerciseView {
             "11", "12", "13", "14", "15", "to failure"
         ]
         
+        func createIntArr(from: Int16, through: Int16, by: Int16) -> [Int16] {
+            var arr: [Int16] = []
+            for i in stride(from: from, through: through, by: by) {
+                arr.append(i)
+            }
+            return arr
+        }
+        
+        func createDoubleArr(from: Double, through: Double, by: Double) -> [Double] {
+            var arr: [Double] = []
+            for i in stride(from: from, through: through, by: by) {
+                arr.append(i)
+            }
+            return arr
+        }
+        
         func hideKeyboard() {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
