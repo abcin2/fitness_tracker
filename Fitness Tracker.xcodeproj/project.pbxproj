@@ -38,6 +38,7 @@
 		33D8C1392939A5A1000B00D5 /* EditExercise+Other+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */; };
 		33D8C13B2939A69E000B00D5 /* EditExercise+Timer+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */; };
 		33D8C13F293D2B3E000B00D5 /* RecordExercise+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */; };
+		33D8C13D2939AAF8000B00D5 /* AttributeInputRow+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Other+View.swift"; sourceTree = "<group>"; };
 		33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Timer+View.swift"; sourceTree = "<group>"; };
 		33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RecordExercise+View.swift"; path = "Fitness Tracker/Views/RecordExercise/RecordExercise+View.swift"; sourceTree = SOURCE_ROOT; };
+		33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputRow+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				33D8C10F293965D0000B00D5 /* Dashboard+View.swift */,
 				33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */,
+				33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */,
 				33D8C110293965D0000B00D5 /* ExercisesList+View.swift */,
 				33D8C12F2939A404000B00D5 /* EditExercise */,
 				33D8C12229398AFB000B00D5 /* RecordExercise */,
@@ -289,6 +292,7 @@
 				33D8C1332939A4AC000B00D5 /* EditExercise+ASCMachines+View.swift in Sources */,
 				33D8C0FB29382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld in Sources */,
 				33D8C11E293965F9000B00D5 /* Dashboard+ViewModel.swift in Sources */,
+				33D8C13D2939AAF8000B00D5 /* AttributeInputRow+View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
