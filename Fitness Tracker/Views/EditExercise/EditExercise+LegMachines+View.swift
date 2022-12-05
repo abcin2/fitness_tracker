@@ -21,22 +21,38 @@ extension EditExerciseView {
                 .padding(.horizontal)
             }
             Divider()
-            HStack {
-                Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
-                    Picker("Machine Setting", selection: $viewModel.machineSetting) {
-                        ForEach(viewModel.oneThroughTen, id: \.self) { number in
-                            Text("\(number)")
+            switch workout.name {
+            case legMachinesName.seatedLegPress.rawValue:
+                HStack {
+                    Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
+                        Picker("Machine Setting", selection: $viewModel.machineSetting) {
+                            ForEach(viewModel.createIntArr(from: 1, through: 15, by: 1), id: \.self) { number in
+                                Text("\(number)")
+                            }
                         }
                     }
+                    .padding(.horizontal)
+                    .padding(.vertical, -3)
                 }
-                .padding(.horizontal)
-                .padding(.vertical, -3)
+                Divider()
+            default:
+                HStack {
+                    Section(header: Text("Machine Setting").frame(maxWidth: .infinity, alignment: .leading)) {
+                        Picker("Machine Setting", selection: $viewModel.machineSetting) {
+                            ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
+                                Text("\(number)")
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, -3)
+                }
+                Divider()
             }
-            Divider()
             HStack {
                 Section(header: Text("Sets").frame(maxWidth: .infinity, alignment: .leading)) {
                     Picker("Sets", selection: $viewModel.sets) {
-                        ForEach(viewModel.oneThroughTen, id: \.self) { number in
+                        ForEach(viewModel.createIntArr(from: 1, through: 10, by: 1), id: \.self) { number in
                             Text("\(number)")
                         }
                     }
