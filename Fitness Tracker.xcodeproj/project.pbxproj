@@ -39,6 +39,9 @@
 		33D8C13B2939A69E000B00D5 /* EditExercise+Timer+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */; };
 		33D8C13D2939AAF8000B00D5 /* AttributeInputRow+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */; };
 		33D8C13F293D2B3E000B00D5 /* RecordExercise+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */; };
+		33D8C142293E4EE4000B00D5 /* AttributeInputPicker+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C141293E4EE4000B00D5 /* AttributeInputPicker+View.swift */; };
+		33D8C144293E5399000B00D5 /* AttributeInputTextField+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C143293E5399000B00D5 /* AttributeInputTextField+View.swift */; };
+		33D8C146293E55C3000B00D5 /* AttributeInputCounter+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C145293E55C3000B00D5 /* AttributeInputCounter+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Timer+View.swift"; sourceTree = "<group>"; };
 		33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputRow+View.swift"; sourceTree = "<group>"; };
 		33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RecordExercise+View.swift"; path = "Fitness Tracker/Views/RecordExercise/RecordExercise+View.swift"; sourceTree = SOURCE_ROOT; };
+		33D8C141293E4EE4000B00D5 /* AttributeInputPicker+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputPicker+View.swift"; sourceTree = "<group>"; };
+		33D8C143293E5399000B00D5 /* AttributeInputTextField+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputTextField+View.swift"; sourceTree = "<group>"; };
+		33D8C145293E55C3000B00D5 /* AttributeInputCounter+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputCounter+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 				33D8C10F293965D0000B00D5 /* Dashboard+View.swift */,
 				33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */,
 				33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */,
+				33D8C140293E4658000B00D5 /* AttributeInputRows */,
 				33D8C110293965D0000B00D5 /* ExercisesList+View.swift */,
 				33D8C12F2939A404000B00D5 /* EditExercise */,
 				33D8C12229398AFB000B00D5 /* RecordExercise */,
@@ -191,6 +198,16 @@
 				33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */,
 			);
 			path = EditExercise;
+			sourceTree = "<group>";
+		};
+		33D8C140293E4658000B00D5 /* AttributeInputRows */ = {
+			isa = PBXGroup;
+			children = (
+				33D8C141293E4EE4000B00D5 /* AttributeInputPicker+View.swift */,
+				33D8C143293E5399000B00D5 /* AttributeInputTextField+View.swift */,
+				33D8C145293E55C3000B00D5 /* AttributeInputCounter+View.swift */,
+			);
+			path = AttributeInputRows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +289,7 @@
 				33D8C12C29399201000B00D5 /* RecordExercise+Other+View.swift in Sources */,
 				33D8C1092938D96A000B00D5 /* TestDataView.swift in Sources */,
 				33D8C13B2939A69E000B00D5 /* EditExercise+Timer+View.swift in Sources */,
+				33D8C146293E55C3000B00D5 /* AttributeInputCounter+View.swift in Sources */,
 				33D8C1352939A517000B00D5 /* EditExercise+LegMachines+View.swift in Sources */,
 				33D8C0F129382BA1000B00D5 /* ContentView.swift in Sources */,
 				33D8C12A293991A7000B00D5 /* RecordExercise+CoreMachines+View.swift in Sources */,
@@ -279,6 +297,7 @@
 				33D8C11D293965F9000B00D5 /* ExerciseHistory+ViewModel.swift in Sources */,
 				33D8C1262939903D000B00D5 /* RecordExercise+ASCMachines+View.swift in Sources */,
 				33D8C13F293D2B3E000B00D5 /* RecordExercise+View.swift in Sources */,
+				33D8C144293E5399000B00D5 /* AttributeInputTextField+View.swift in Sources */,
 				33D8C120293965F9000B00D5 /* RecordExercise+ViewModel.swift in Sources */,
 				33D8C12E29399259000B00D5 /* RecordExercise+Timer+View.swift in Sources */,
 				33D8C10B29396537000B00D5 /* Exercises+Model.swift in Sources */,
@@ -293,6 +312,7 @@
 				33D8C0FB29382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld in Sources */,
 				33D8C11E293965F9000B00D5 /* Dashboard+ViewModel.swift in Sources */,
 				33D8C13D2939AAF8000B00D5 /* AttributeInputRow+View.swift in Sources */,
+				33D8C142293E4EE4000B00D5 /* AttributeInputPicker+View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
