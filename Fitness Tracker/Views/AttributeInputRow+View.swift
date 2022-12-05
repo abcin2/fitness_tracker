@@ -82,7 +82,7 @@ struct AttributeInputRowView_Previews: PreviewProvider {
                 receivingFunction: { value in
                     return value
                 },
-                counterSelection: 1,
+                counterSelection: .constant(1),
                 incrementButton: { num in
                     let value = num + 1
                     return value
