@@ -37,8 +37,8 @@
 		33D8C1372939A563000B00D5 /* EditExercise+CoreMachines+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C1362939A563000B00D5 /* EditExercise+CoreMachines+View.swift */; };
 		33D8C1392939A5A1000B00D5 /* EditExercise+Other+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */; };
 		33D8C13B2939A69E000B00D5 /* EditExercise+Timer+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */; };
-		33D8C13F293D2B3E000B00D5 /* RecordExercise+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */; };
 		33D8C13D2939AAF8000B00D5 /* AttributeInputRow+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */; };
+		33D8C13F293D2B3E000B00D5 /* RecordExercise+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,8 +74,8 @@
 		33D8C1362939A563000B00D5 /* EditExercise+CoreMachines+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+CoreMachines+View.swift"; sourceTree = "<group>"; };
 		33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Other+View.swift"; sourceTree = "<group>"; };
 		33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Timer+View.swift"; sourceTree = "<group>"; };
-		33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RecordExercise+View.swift"; path = "Fitness Tracker/Views/RecordExercise/RecordExercise+View.swift"; sourceTree = SOURCE_ROOT; };
 		33D8C13C2939AAF8000B00D5 /* AttributeInputRow+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputRow+View.swift"; sourceTree = "<group>"; };
+		33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RecordExercise+View.swift"; path = "Fitness Tracker/Views/RecordExercise/RecordExercise+View.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,12 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				33D8C10E293965D0000B00D5 /* EditExercise+View.swift */,
-				33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */,
-				33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */,
-				33D8C1362939A563000B00D5 /* EditExercise+CoreMachines+View.swift */,
-				33D8C1342939A517000B00D5 /* EditExercise+LegMachines+View.swift */,
-				33D8C1322939A4AC000B00D5 /* EditExercise+ASCMachines+View.swift */,
 				33D8C1302939A45D000B00D5 /* EditExercise+CardioMachines+View.swift */,
+				33D8C1322939A4AC000B00D5 /* EditExercise+ASCMachines+View.swift */,
+				33D8C1342939A517000B00D5 /* EditExercise+LegMachines+View.swift */,
+				33D8C1362939A563000B00D5 /* EditExercise+CoreMachines+View.swift */,
+				33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */,
+				33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */,
 			);
 			path = EditExercise;
 			sourceTree = "<group>";
