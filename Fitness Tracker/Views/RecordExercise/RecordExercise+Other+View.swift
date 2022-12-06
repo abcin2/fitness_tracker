@@ -41,6 +41,7 @@ extension RecordExerciseView {
         case walking = "Walking"
         case running = "Running"
         case hiking = "Hiking"
+        case biking = "Biking"
         case yoga = "Yoga"
         case stretching = "Stretching"
     }

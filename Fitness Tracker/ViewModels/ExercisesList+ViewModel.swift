@@ -41,6 +41,10 @@ extension ExercisesListView {
             ]),
             .init(exerciseCategory: "Other", exercisesOptions: [
                 "Freeweights",
+                "Walking",
+                "Runnning",
+                "Hiking",
+                "Biking",
                 "Yoga",
                 "Stretching"
             ])
