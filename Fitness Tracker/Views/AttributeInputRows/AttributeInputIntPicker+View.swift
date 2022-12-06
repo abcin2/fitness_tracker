@@ -4,8 +4,8 @@ import SwiftUI
 struct AttributeInputIntPicker: View {
     var attributeTitle: String
     
-    @Binding var pickerSelection: Int
-    var pickerSelections: [Int]
+    @Binding var pickerSelection: Int16
+    var pickerSelections: [Int16]
     
     var isDisabled: Bool
     

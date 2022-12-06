@@ -1,7 +1,7 @@
 import Combine
 import SwiftUI
 
-struct AttributeInputTextFieldView: View {
+struct AttributeInputTextField: View {
     var attributeTitle: String
     
     @Binding var textSelection: String
@@ -30,9 +30,9 @@ struct AttributeInputTextFieldView: View {
     }
 }
 
-struct AttributeInputTextFieldView_Previews: PreviewProvider {
+struct AttributeInputTextField_Previews: PreviewProvider {
     static var previews: some View {
-        AttributeInputTextFieldView(
+        AttributeInputTextField(
             attributeTitle: "Text Field Attribute",
             textSelection: .constant("Text"),
             receivingFunction: { value in

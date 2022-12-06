@@ -1,7 +1,7 @@
 import Combine
 import SwiftUI
 
-struct AttributeInputCounterView: View {
+struct AttributeInputCounter: View {
     var attributeTitle: String
     
     @Binding var counterSelection: Int
@@ -39,9 +39,9 @@ struct AttributeInputCounterView: View {
     }
 }
 
-struct AttributeInputCounterView_Previews: PreviewProvider {
+struct AttributeInputCounter_Previews: PreviewProvider {
     static var previews: some View {
-        AttributeInputCounterView(
+        AttributeInputCounter(
         attributeTitle: "Counter Attribute",
         counterSelection: .constant(1),
         incrementButton: { num in
