@@ -26,6 +26,7 @@ extension EditExerciseView {
             minutesElapsedString = timeElapsedFormatted.components(separatedBy: ":")[0]
             secondsElapsedString = timeElapsedFormatted.components(separatedBy: ":")[1]
             intensityLevel = data.intensity
+            bikeIntensityLevel = Int(data.bikeIntensity)
             inclineLevel = data.incline
             machineSetting = Int(data.adjustment)
             freeWeightExercise = data.freeWeightExercise ?? ""

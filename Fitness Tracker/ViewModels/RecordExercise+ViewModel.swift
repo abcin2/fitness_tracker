@@ -49,6 +49,7 @@ extension RecordExerciseView {
             fieldsDisabled = false
             secondsElapsed = 0
             intensityLevel = 1.0
+            bikeIntensityLevel = 1
             inclineLevel = 0.0
             machineSetting = 1
             weight = "10"

@@ -65,7 +65,8 @@ extension RecordExerciseView {
                         exercise.weight = viewModel.weight
                         exercise.adjustment = Int16(viewModel.machineSetting)
                         exercise.incline = viewModel.inclineLevel
-                        exercise.intensity = Double(viewModel.intensityLevel)
+                        exercise.intensity = viewModel.intensityLevel
+                        exercise.bikeIntensity = Int16(viewModel.bikeIntensityLevel)
                         exercise.length = viewModel.secondsElapsed
                         exercise.dateCompleted = Date.now
                         exercise.reps = viewModel.reps
