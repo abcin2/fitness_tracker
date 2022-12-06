@@ -10,7 +10,8 @@ extension EditExerciseView {
                 AttributeInputDoublePicker(
                     attributeTitle: "Intensity Level",
                     pickerSelection: $viewModel.intensityLevel,
-                    pickerSelections: viewModel.createDoubleArr(from: 1.0, through: 20.0, by: 0.1)
+                    pickerSelections: viewModel.createDoubleArr(from: 1.0, through: 20.0, by: 0.1),
+                    isDisabled: false
                 )
                 HStack {
                     Section(header: Text("Incline Level").frame(maxWidth: .infinity, alignment: .leading)) {
