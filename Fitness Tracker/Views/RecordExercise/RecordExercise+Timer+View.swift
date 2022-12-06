@@ -63,13 +63,13 @@ extension RecordExerciseView {
                         exercise.name = workout
                         exercise.freeWeightExercise = viewModel.freeWeightExercise
                         exercise.weight = viewModel.weight
-                        exercise.adjustment = viewModel.machineSetting
+                        exercise.adjustment = Int16(viewModel.machineSetting)
                         exercise.incline = viewModel.inclineLevel
-                        exercise.intensity = viewModel.intensityLevel
+                        exercise.intensity = Double(viewModel.intensityLevel)
                         exercise.length = viewModel.secondsElapsed
                         exercise.dateCompleted = Date.now
                         exercise.reps = viewModel.reps
-                        exercise.sets = viewModel.sets
+                        exercise.sets = Int16(viewModel.sets)
                         try? moc.save()
                         viewModel.confirmSaveWorkout()
                         presentationMode.wrappedValue.dismiss()

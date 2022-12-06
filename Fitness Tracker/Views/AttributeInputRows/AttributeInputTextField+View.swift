@@ -1,14 +1,37 @@
 import Combine
 import SwiftUI
 
-struct AttributeInputTextField_View: View {
+struct AttributeInputTextField: View {
+    var attributeTitle: String
+    
+    @Binding var textSelection: String
+    var trailingText: String?
+    
+    var isDisabled: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
+                    TextField(attributeTitle, text: $textSelection)
+                        .disabled(isDisabled)
+                        .keyboardType(.numberPad)
+                    Text(trailingText ?? "")
+                }
+            }
+            .padding(.horizontal)
+            Divider()
+        }
     }
 }
 
-struct AttributeInputTextField_View_Previews: PreviewProvider {
+struct AttributeInputTextField_Previews: PreviewProvider {
     static var previews: some View {
-        AttributeInputTextField_View()
+        AttributeInputTextField(
+            attributeTitle: "Text Field Attribute",
+            textSelection: .constant("Text"),
+            trailingText: "lbs",
+            isDisabled: false
+        )
     }
 }

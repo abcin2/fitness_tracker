@@ -98,20 +98,20 @@ extension RecordExerciseView {
         let data = ExercisesListView().viewModel.data
         
         @Published var intensityLevel: Double = 1.0
-        @Published var bikeIntensityLevel: Int16 = 1
+        @Published var bikeIntensityLevel: Int = 1
         @Published var inclineLevel: Double = 0.0
-        @Published var machineSetting: Int16 = 1
+        @Published var machineSetting: Int = 1
         @Published var weight: String = "10"
         @Published var freeWeightExercise: String = ""
         @Published var reps: String = "1"
-        @Published var sets: Int16 = 1
+        @Published var sets: Int = 1
         
         let repOptions: [String] = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "to failure"
         ]
         
-        func createIntArr(from: Int16, through: Int16, by: Int) -> [Int16] {
-            var arr: [Int16] = []
+        func createIntArr(from: Int, through: Int, by: Int) -> [Int] {
+            var arr: [Int] = []
             for i in stride(from: from, through: through, by: by) {
                 arr.append(i)
             }
