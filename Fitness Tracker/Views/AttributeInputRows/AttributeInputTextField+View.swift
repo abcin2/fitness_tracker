@@ -1,14 +1,41 @@
 import Combine
 import SwiftUI
 
-struct AttributeInputTextField_View: View {
+struct AttributeInputTextFieldView: View {
+    var attributeTitle: String
+    
+    @Binding var textSelection: String
+    var receivingFunction: ((_ value: String) -> String)
+    var trailingText: String?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
+                    TextField(attributeTitle, text: $textSelection)
+                        .keyboardType(.numberPad)
+                        .onReceive(Just(textSelection)) { newValue in
+                            let newString = receivingFunction(newValue)
+                            textSelection = newString
+                        }
+                    Text(trailingText ?? "")
+                }
+            }
+            .padding(.horizontal)
+            Divider()
+        }
     }
 }
 
-struct AttributeInputTextField_View_Previews: PreviewProvider {
+struct AttributeInputTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        AttributeInputTextField_View()
+        AttributeInputTextFieldView(
+            attributeTitle: "Text Field Attribute",
+            textSelection: .constant("Text"),
+            receivingFunction: { value in
+                return value
+            },
+            trailingText: "lbs"
+        )
     }
 }

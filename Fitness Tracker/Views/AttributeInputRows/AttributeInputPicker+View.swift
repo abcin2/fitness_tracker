@@ -1,14 +1,35 @@
 import Combine
 import SwiftUI
 
-struct AttributeInputPicker_View: View {
+struct AttributeInputPickerView: View {
+    var attributeTitle: String
+    
+    @Binding var pickerSelection: String
+    var pickerSelections: [String]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
+                    Picker(attributeTitle, selection: $pickerSelection) {
+                        ForEach(pickerSelections, id: \.self) { selection in
+                            Text(selection)
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal)
+            Divider()
+        }
     }
 }
 
-struct AttributeInputPicker_View_Previews: PreviewProvider {
+struct AttributeInputPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        AttributeInputPicker_View()
+        AttributeInputPickerView(
+            attributeTitle: "Picker Attribute",
+            pickerSelection: .constant("2"),
+            pickerSelections: ["1", "2", "3"]
+        )
     }
 }
