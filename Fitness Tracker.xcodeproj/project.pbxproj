@@ -144,8 +144,8 @@
 			children = (
 				33D8C10F293965D0000B00D5 /* Dashboard+View.swift */,
 				33D8C111293965D0000B00D5 /* ExerciseHistory+View.swift */,
-				33D8C140293E4658000B00D5 /* AttributeInputRows */,
 				33D8C110293965D0000B00D5 /* ExercisesList+View.swift */,
+				33D8C140293E4658000B00D5 /* AttributeInputRows */,
 				33D8C12F2939A404000B00D5 /* EditExercise */,
 				33D8C12229398AFB000B00D5 /* RecordExercise */,
 				33D8C10D293965D0000B00D5 /* StartScreen+View.swift */,

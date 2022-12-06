@@ -15,7 +15,7 @@ extension RecordExerciseView {
                 )
                 AttributeInputDoublePicker(
                     attributeTitle: "Incline Level",
-                    pickerSelection: $viewModel.intensityLevel,
+                    pickerSelection: $viewModel.inclineLevel,
                     pickerSelections: viewModel.createDoubleArr(from: 0.0, through: 20.0, by: 0.5),
                     isDisabled: viewModel.fieldsDisabled
                 )

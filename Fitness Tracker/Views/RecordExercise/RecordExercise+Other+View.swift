@@ -10,23 +10,11 @@ extension RecordExerciseView {
                 AttributeInputTextField(
                     attributeTitle: "Exercise/Muscles",
                     textSelection: $viewModel.freeWeightExercise,
-                    receivingFunction: { newValue in
-                        return newValue
-                    },
                     isDisabled: viewModel.fieldsDisabled
                 )
                 AttributeInputTextField(
                     attributeTitle: "Weight",
                     textSelection: $viewModel.weight,
-                    receivingFunction: { newValue in
-                        var returnString = ""
-                        let numFiltered = newValue.filter { "0123456789".contains($0) }
-                        let sizeFiltered = numFiltered.prefix(3)
-                        if sizeFiltered != newValue {
-                            returnString = String(sizeFiltered)
-                        }
-                        return returnString
-                    },
                     trailingText: "lbs",
                     isDisabled: viewModel.fieldsDisabled
                 )

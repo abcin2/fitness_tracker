@@ -82,13 +82,13 @@ struct EditExerciseView: View {
                     if let exercise = workouts.first(where: {$0.name == workout.name}) {
                         exercise.freeWeightExercise = viewModel.freeWeightExercise
                         exercise.weight = viewModel.weight
-                        exercise.adjustment = viewModel.machineSetting
+                        exercise.adjustment = Int16(viewModel.machineSetting)
                         exercise.incline = viewModel.inclineLevel
                         exercise.intensity = viewModel.intensityLevel
                         exercise.length = viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         exercise.dateCompleted = Date.now
                         exercise.reps = viewModel.reps
-                        exercise.sets = viewModel.sets
+                        exercise.sets = Int16(viewModel.sets)
                         try? moc.save()
                         presentationMode.wrappedValue.dismiss()
                     }

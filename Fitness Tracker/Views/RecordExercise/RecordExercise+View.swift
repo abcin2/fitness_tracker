@@ -45,6 +45,6 @@ private extension RecordExerciseView {
 
 struct RecordExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordExerciseView(workout: "Freeweights")
+        RecordExerciseView(workout: "Bicep Curl Station")
     }
 }

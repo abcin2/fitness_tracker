@@ -5,7 +5,6 @@ struct AttributeInputTextField: View {
     var attributeTitle: String
     
     @Binding var textSelection: String
-    var receivingFunction: ((_ value: String) -> String)
     var trailingText: String?
     
     var isDisabled: Bool
@@ -17,10 +16,6 @@ struct AttributeInputTextField: View {
                     TextField(attributeTitle, text: $textSelection)
                         .disabled(isDisabled)
                         .keyboardType(.numberPad)
-                        .onReceive(Just(textSelection)) { newValue in
-                            let newString = receivingFunction(newValue)
-                            textSelection = newString
-                        }
                     Text(trailingText ?? "")
                 }
             }
@@ -35,9 +30,6 @@ struct AttributeInputTextField_Previews: PreviewProvider {
         AttributeInputTextField(
             attributeTitle: "Text Field Attribute",
             textSelection: .constant("Text"),
-            receivingFunction: { value in
-                return value
-            },
             trailingText: "lbs",
             isDisabled: false
         )
