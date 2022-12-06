@@ -7,18 +7,11 @@ extension EditExerciseView {
             Divider()
             switch workout.name {
             case cardioMachinesName.treadmill.rawValue:
-                HStack {
-                    Section(header: Text("Intensity Level").frame(maxWidth: .infinity, alignment: .leading)) {
-                        Picker("Intensity Level", selection: $viewModel.intensityLevel) {
-                            ForEach(viewModel.createDoubleArr(from: 1.0, through: 20.0, by: 0.1), id: \.self) { number in
-                                Text("\(number, specifier: "%.1f")")
-                            }
-                        }
-                    }
-                    .padding(.horizontal)
-                    .padding(.vertical, -3)
-                }
-                Divider()
+                AttributeInputDoublePicker(
+                    attributeTitle: "Intensity Level",
+                    pickerSelection: $viewModel.intensityLevel,
+                    pickerSelections: viewModel.createDoubleArr(from: 1.0, through: 20.0, by: 0.1)
+                )
                 HStack {
                     Section(header: Text("Incline Level").frame(maxWidth: .infinity, alignment: .leading)) {
                         Picker("Incline Level", selection: $viewModel.inclineLevel) {

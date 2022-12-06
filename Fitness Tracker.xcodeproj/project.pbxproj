@@ -38,9 +38,11 @@
 		33D8C1392939A5A1000B00D5 /* EditExercise+Other+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */; };
 		33D8C13B2939A69E000B00D5 /* EditExercise+Timer+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */; };
 		33D8C13F293D2B3E000B00D5 /* RecordExercise+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */; };
-		33D8C142293E4EE4000B00D5 /* AttributeInputPicker+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C141293E4EE4000B00D5 /* AttributeInputPicker+View.swift */; };
+		33D8C142293E4EE4000B00D5 /* AttributeInputStringPicker+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C141293E4EE4000B00D5 /* AttributeInputStringPicker+View.swift */; };
 		33D8C144293E5399000B00D5 /* AttributeInputTextField+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C143293E5399000B00D5 /* AttributeInputTextField+View.swift */; };
 		33D8C146293E55C3000B00D5 /* AttributeInputCounter+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C145293E55C3000B00D5 /* AttributeInputCounter+View.swift */; };
+		33D8C148293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C147293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift */; };
+		33D8C14A293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C149293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,9 +79,11 @@
 		33D8C1382939A5A1000B00D5 /* EditExercise+Other+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Other+View.swift"; sourceTree = "<group>"; };
 		33D8C13A2939A69E000B00D5 /* EditExercise+Timer+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Timer+View.swift"; sourceTree = "<group>"; };
 		33D8C13E293D2B3E000B00D5 /* RecordExercise+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RecordExercise+View.swift"; path = "Fitness Tracker/Views/RecordExercise/RecordExercise+View.swift"; sourceTree = SOURCE_ROOT; };
-		33D8C141293E4EE4000B00D5 /* AttributeInputPicker+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputPicker+View.swift"; sourceTree = "<group>"; };
+		33D8C141293E4EE4000B00D5 /* AttributeInputStringPicker+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputStringPicker+View.swift"; sourceTree = "<group>"; };
 		33D8C143293E5399000B00D5 /* AttributeInputTextField+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputTextField+View.swift"; sourceTree = "<group>"; };
 		33D8C145293E55C3000B00D5 /* AttributeInputCounter+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputCounter+View.swift"; sourceTree = "<group>"; };
+		33D8C147293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputIntPicker+View.swift"; sourceTree = "<group>"; };
+		33D8C149293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputDoublePicker+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +204,9 @@
 		33D8C140293E4658000B00D5 /* AttributeInputRows */ = {
 			isa = PBXGroup;
 			children = (
-				33D8C141293E4EE4000B00D5 /* AttributeInputPicker+View.swift */,
+				33D8C141293E4EE4000B00D5 /* AttributeInputStringPicker+View.swift */,
+				33D8C147293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift */,
+				33D8C149293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift */,
 				33D8C143293E5399000B00D5 /* AttributeInputTextField+View.swift */,
 				33D8C145293E55C3000B00D5 /* AttributeInputCounter+View.swift */,
 			);
@@ -308,7 +314,9 @@
 				33D8C1332939A4AC000B00D5 /* EditExercise+ASCMachines+View.swift in Sources */,
 				33D8C0FB29382BA2000B00D5 /* Fitness_Tracker.xcdatamodeld in Sources */,
 				33D8C11E293965F9000B00D5 /* Dashboard+ViewModel.swift in Sources */,
-				33D8C142293E4EE4000B00D5 /* AttributeInputPicker+View.swift in Sources */,
+				33D8C142293E4EE4000B00D5 /* AttributeInputStringPicker+View.swift in Sources */,
+				33D8C148293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift in Sources */,
+				33D8C14A293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,11 @@
 import Combine
 import SwiftUI
 
-struct AttributeInputPickerView: View {
+struct AttributeInputDoublePicker: View {
     var attributeTitle: String
     
-    @Binding var pickerSelection: String
-    var pickerSelections: [String]
+    @Binding var pickerSelection: Double
+    var pickerSelections: [Double]
     
     var body: some View {
         VStack {
@@ -13,7 +13,7 @@ struct AttributeInputPickerView: View {
                 Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
                     Picker(attributeTitle, selection: $pickerSelection) {
                         ForEach(pickerSelections, id: \.self) { selection in
-                            Text(selection)
+                            Text("\(selection)")
                         }
                     }
                 }
@@ -24,12 +24,12 @@ struct AttributeInputPickerView: View {
     }
 }
 
-struct AttributeInputPickerView_Previews: PreviewProvider {
+struct AttributeInputDoublePicker_Previews: PreviewProvider {
     static var previews: some View {
-        AttributeInputPickerView(
+        AttributeInputDoublePicker(
             attributeTitle: "Picker Attribute",
-            pickerSelection: .constant("2"),
-            pickerSelections: ["1", "2", "3"]
+            pickerSelection: .constant(2.0),
+            pickerSelections: [1.0, 2.0, 3.0]
         )
     }
 }
