@@ -157,10 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				33D8C119293965F9000B00D5 /* Dashboard+ViewModel.swift */,
-				33D8C11A293965F9000B00D5 /* EditExercise+ViewModel.swift */,
 				33D8C118293965F9000B00D5 /* ExerciseHistory+ViewModel.swift */,
 				33D8C11C293965F9000B00D5 /* ExercisesList+ViewModel.swift */,
 				33D8C11B293965F9000B00D5 /* RecordExercise+ViewModel.swift */,
+				33D8C11A293965F9000B00D5 /* EditExercise+ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
