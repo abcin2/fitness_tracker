@@ -7,6 +7,8 @@ struct AttributeInputDoublePicker: View {
     @Binding var pickerSelection: Double
     var pickerSelections: [Double]
     
+    var isDisabled: Bool
+    
     var body: some View {
         VStack {
             HStack {
@@ -16,6 +18,7 @@ struct AttributeInputDoublePicker: View {
                             Text("\(selection)")
                         }
                     }
+                    .disabled(isDisabled)
                 }
             }
             .padding(.horizontal)
@@ -29,7 +32,8 @@ struct AttributeInputDoublePicker_Previews: PreviewProvider {
         AttributeInputDoublePicker(
             attributeTitle: "Picker Attribute",
             pickerSelection: .constant(2.0),
-            pickerSelections: [1.0, 2.0, 3.0]
+            pickerSelections: [1.0, 2.0, 3.0],
+            isDisabled: false
         )
     }
 }

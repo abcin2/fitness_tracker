@@ -8,11 +8,14 @@ struct AttributeInputTextFieldView: View {
     var receivingFunction: ((_ value: String) -> String)
     var trailingText: String?
     
+    var isDisabled: Bool
+    
     var body: some View {
         VStack {
             HStack {
                 Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
                     TextField(attributeTitle, text: $textSelection)
+                        .disabled(isDisabled)
                         .keyboardType(.numberPad)
                         .onReceive(Just(textSelection)) { newValue in
                             let newString = receivingFunction(newValue)
@@ -35,7 +38,8 @@ struct AttributeInputTextFieldView_Previews: PreviewProvider {
             receivingFunction: { value in
                 return value
             },
-            trailingText: "lbs"
+            trailingText: "lbs",
+            isDisabled: false
         )
     }
 }

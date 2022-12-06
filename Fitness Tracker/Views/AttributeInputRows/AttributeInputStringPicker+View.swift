@@ -7,6 +7,8 @@ struct AttributeInputStringPicker: View {
     @Binding var pickerSelection: String
     var pickerSelections: [String]
     
+    var isDisabled: Bool
+    
     var body: some View {
         VStack {
             HStack {
@@ -16,6 +18,7 @@ struct AttributeInputStringPicker: View {
                             Text(selection)
                         }
                     }
+                    .disabled(isDisabled)
                 }
             }
             .padding(.horizontal)
@@ -29,7 +32,8 @@ struct AttributeInputStringPicker_Previews: PreviewProvider {
         AttributeInputStringPicker(
             attributeTitle: "Picker Attribute",
             pickerSelection: .constant("2"),
-            pickerSelections: ["1", "2", "3"]
+            pickerSelections: ["1", "2", "3"],
+            isDisabled: false
         )
     }
 }

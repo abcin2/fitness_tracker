@@ -8,6 +8,8 @@ struct AttributeInputCounterView: View {
     var incrementButton: ((_ value: Int) -> Int)
     var decrementButton: ((_ value: Int) -> Int)
     
+    var isDisabled: Bool
+    
     var body: some View {
         VStack {
             HStack {
@@ -19,6 +21,7 @@ struct AttributeInputCounterView: View {
                     }) {
                         Text("<")
                     }
+                    .disabled(isDisabled)
                     Text("\(counterSelection)")
                     Button(action: {
                         let newNum = incrementButton(counterSelection)
@@ -27,6 +30,7 @@ struct AttributeInputCounterView: View {
                     }) {
                         Text(">")
                     }
+                    .disabled(isDisabled)
                 }
             }
             .padding(.horizontal)
@@ -47,7 +51,8 @@ struct AttributeInputCounterView_Previews: PreviewProvider {
         decrementButton: { num in
             let value = num - 1
             return value
-        }
+        },
+        isDisabled: false
         )
     }
 }
