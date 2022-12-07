@@ -43,6 +43,8 @@
 		33D8C146293E55C3000B00D5 /* AttributeInputCounter+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C145293E55C3000B00D5 /* AttributeInputCounter+View.swift */; };
 		33D8C148293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C147293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift */; };
 		33D8C14A293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C149293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift */; };
+		33D8C14C29403042000B00D5 /* EditExercise+Buttons+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C14B29403042000B00D5 /* EditExercise+Buttons+View.swift */; };
+		33D8C14E294033D0000B00D5 /* EditExercise+ExerciseHeader+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C14D294033D0000B00D5 /* EditExercise+ExerciseHeader+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		33D8C145293E55C3000B00D5 /* AttributeInputCounter+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputCounter+View.swift"; sourceTree = "<group>"; };
 		33D8C147293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputIntPicker+View.swift"; sourceTree = "<group>"; };
 		33D8C149293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributeInputDoublePicker+View.swift"; sourceTree = "<group>"; };
+		33D8C14B29403042000B00D5 /* EditExercise+Buttons+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+Buttons+View.swift"; sourceTree = "<group>"; };
+		33D8C14D294033D0000B00D5 /* EditExercise+ExerciseHeader+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditExercise+ExerciseHeader+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				33D8C10E293965D0000B00D5 /* EditExercise+View.swift */,
+				33D8C14D294033D0000B00D5 /* EditExercise+ExerciseHeader+View.swift */,
+				33D8C14B29403042000B00D5 /* EditExercise+Buttons+View.swift */,
 				33D8C1302939A45D000B00D5 /* EditExercise+CardioMachines+View.swift */,
 				33D8C1322939A4AC000B00D5 /* EditExercise+ASCMachines+View.swift */,
 				33D8C1342939A517000B00D5 /* EditExercise+LegMachines+View.swift */,
@@ -288,6 +294,7 @@
 				33D8C0F829382BA2000B00D5 /* Persistence.swift in Sources */,
 				33D8C12429398FAE000B00D5 /* RecordExercise+CardioMachines+View.swift in Sources */,
 				33D8C128293990B4000B00D5 /* RecordExercise+LegMachines+View.swift in Sources */,
+				33D8C14E294033D0000B00D5 /* EditExercise+ExerciseHeader+View.swift in Sources */,
 				33D8C116293965D0000B00D5 /* ExercisesList+View.swift in Sources */,
 				33D8C12C29399201000B00D5 /* RecordExercise+Other+View.swift in Sources */,
 				33D8C1092938D96A000B00D5 /* TestDataView.swift in Sources */,
@@ -316,6 +323,7 @@
 				33D8C11E293965F9000B00D5 /* Dashboard+ViewModel.swift in Sources */,
 				33D8C142293E4EE4000B00D5 /* AttributeInputStringPicker+View.swift in Sources */,
 				33D8C148293ECE2B000B00D5 /* AttributeInputIntPicker+View.swift in Sources */,
+				33D8C14C29403042000B00D5 /* EditExercise+Buttons+View.swift in Sources */,
 				33D8C14A293ECE97000B00D5 /* AttributeInputDoublePicker+View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
