@@ -14,6 +14,7 @@ struct AttributeInputTextField: View {
             HStack {
                 Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
                     TextField(attributeTitle, text: $textSelection)
+                        .multilineTextAlignment(.trailing)
                         .disabled(isDisabled)
                         .keyboardType(.numberPad)
                     Text(trailingText ?? "")
