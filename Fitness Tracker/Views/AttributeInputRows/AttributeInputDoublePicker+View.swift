@@ -15,7 +15,7 @@ struct AttributeInputDoublePicker: View {
                 Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
                     Picker(attributeTitle, selection: $pickerSelection) {
                         ForEach(pickerSelections, id: \.self) { selection in
-                            Text("\(selection)")
+                            Text(String(format: "%.1f", selection))
                         }
                     }
                     .disabled(isDisabled)
