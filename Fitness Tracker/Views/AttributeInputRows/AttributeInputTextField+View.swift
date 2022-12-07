@@ -19,9 +19,11 @@ struct AttributeInputTextField: View {
                         .keyboardType(.numberPad)
                     Text(trailingText ?? "")
                 }
+                .frame(height: 50)
             }
             .padding(.horizontal)
-            Divider()
+            .overlay(Divider(), alignment: .top)
+            .overlay(Divider(), alignment: .bottom)
         }
     }
 }

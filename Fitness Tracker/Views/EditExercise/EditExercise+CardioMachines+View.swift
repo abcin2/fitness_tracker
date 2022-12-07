@@ -4,7 +4,6 @@ import SwiftUI
 extension EditExerciseView {
     var cardioMachines: some View {
         VStack {
-            Divider()
             switch workout.name {
             case cardioMachinesName.treadmill.rawValue:
                 AttributeInputDoublePicker(
@@ -41,6 +40,7 @@ extension EditExerciseView {
                 )
             }
         }
+        .overlay(Divider(), alignment: .top)
     }
     
     enum cardioMachinesName: String {

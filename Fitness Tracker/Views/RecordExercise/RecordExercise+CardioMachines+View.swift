@@ -4,7 +4,6 @@ import Combine
 extension RecordExerciseView {
     var cardioMachines: some View {
         VStack {
-            Divider()
             switch workout {
             case cardioMachinesName.treadmill.rawValue:
                 AttributeInputDoublePicker(
@@ -41,6 +40,7 @@ extension RecordExerciseView {
                 )
             }
         }
+        .overlay(Divider(), alignment: .top)
     }
     
     enum cardioMachinesName: String {

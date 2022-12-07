@@ -19,10 +19,12 @@ struct AttributeInputStringPicker: View {
                         }
                     }
                     .disabled(isDisabled)
+                    .frame(height: 50)
                 }
             }
             .padding(.horizontal)
-            Divider()
+            .overlay(Divider(), alignment: .top)
+            .overlay(Divider(), alignment: .bottom)
         }
     }
 }

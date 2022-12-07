@@ -4,7 +4,6 @@ import SwiftUI
 extension EditExerciseView {
     var other: some View {
         VStack {
-            Divider()
             switch workout.name {
             case othersName.freeweights.rawValue:
                 AttributeInputTextField(
@@ -34,6 +33,7 @@ extension EditExerciseView {
                 EmptyView()
             }
         }
+        .overlay(Divider(), alignment: .top)
     }
     
     enum othersName: String {

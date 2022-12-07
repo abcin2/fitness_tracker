@@ -8,7 +8,7 @@ extension EditExerciseView {
                 .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading)
-            Divider()
+                .overlay(Divider(), alignment: .bottom)
             // all workouts will have an option to edit the amount of time
             HStack {
                 Section(header: Text("Minutes").frame(maxWidth: .infinity, alignment: .leading)) {
@@ -17,7 +17,7 @@ extension EditExerciseView {
                 }
                 .padding(.horizontal)
             }
-            Divider()
+            .overlay(Divider(), alignment: .bottom)
             HStack {
                 Section(header: Text("Seconds").frame(maxWidth: .infinity, alignment: .leading)) {
                     TextField("", text: $viewModel.secondsElapsedString)
@@ -25,7 +25,7 @@ extension EditExerciseView {
                 }
                 .padding(.horizontal)
             }
-            Divider()
+            .overlay(Divider(), alignment: .bottom)
         }
         .padding(.vertical)
     }

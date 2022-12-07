@@ -4,12 +4,12 @@ import SwiftUI
 extension EditExerciseView {
     var coreMachines: some View {
         VStack {
-            Divider()
             switch workout.name {
             case coreMachinesName.crunchMachine.rawValue, coreMachinesName.torsoRotation.rawValue:
                 AttributeInputTextField(
                     attributeTitle: "Weight",
                     textSelection: $viewModel.weight,
+                    trailingText: "lbs",
                     isDisabled: false
                 )
                 AttributeInputIntPicker(
@@ -39,6 +39,7 @@ extension EditExerciseView {
                 isDisabled: false
             )
         }
+        .overlay(Divider(), alignment: .top)
     }
     
     enum coreMachinesName: String {

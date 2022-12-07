@@ -4,10 +4,10 @@ import Combine
 extension RecordExerciseView {
     var ASCMachines: some View {
         VStack {
-            Divider()
             AttributeInputTextField(
                 attributeTitle: "Weight",
                 textSelection: $viewModel.weight,
+                trailingText: "lbs",
                 isDisabled: viewModel.fieldsDisabled
             )
             switch workout {
@@ -45,6 +45,7 @@ extension RecordExerciseView {
                 isDisabled: viewModel.fieldsDisabled
             )
         }
+        .overlay(Divider(), alignment: .top)
     }
     
     enum ASCMachinesName: String {

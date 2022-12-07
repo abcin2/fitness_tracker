@@ -4,12 +4,12 @@ import Combine
 extension RecordExerciseView {
     var coreMachines: some View {
         VStack {
-            Divider()
             switch workout {
             case coreMachinesName.crunchMachine.rawValue, coreMachinesName.torsoRotation.rawValue:
                 AttributeInputTextField(
                     attributeTitle: "Weight",
                     textSelection: $viewModel.weight,
+                    trailingText: "lbs",
                     isDisabled: viewModel.fieldsDisabled
                 )
                 AttributeInputIntPicker(
@@ -39,6 +39,7 @@ extension RecordExerciseView {
                 isDisabled: viewModel.fieldsDisabled
             )
         }
+        .overlay(Divider(), alignment: .top)
     }
     
     enum coreMachinesName: String {

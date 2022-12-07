@@ -4,10 +4,10 @@ import SwiftUI
 extension EditExerciseView {
     var legMachines: some View {
         VStack {
-            Divider()
             AttributeInputTextField(
                 attributeTitle: "Weight",
                 textSelection: $viewModel.weight,
+                trailingText: "lbs",
                 isDisabled: false
             )
             switch workout.name {
@@ -46,6 +46,7 @@ extension EditExerciseView {
                 isDisabled: false
             )
         }
+        .overlay(Divider(), alignment: .top)
     }
     
     enum legMachinesName: String {
