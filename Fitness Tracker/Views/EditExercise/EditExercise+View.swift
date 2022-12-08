@@ -10,35 +10,37 @@ struct EditExerciseView: View {
     @ObservedObject var viewModel = ViewModel()
     var body: some View {
         VStack {
-            timer
-            switch workout.category {
-            case "Cardio Machines":
-                ExerciseCategoryHeader {
-                    cardioMachines
+            ScrollView {
+                timer
+                switch workout.category {
+                case "Cardio Machines":
+                    ExerciseCategoryHeader {
+                        cardioMachines
+                    }
+                case "Arm, Shoulder & Chest Machines":
+                    ExerciseCategoryHeader {
+                        ASCMachines
+                    }
+                case "Leg Machines":
+                    ExerciseCategoryHeader {
+                        legMachines
+                    }
+                case "Core Machines":
+                    ExerciseCategoryHeader {
+                        coreMachines
+                    }
+                case "Other":
+                    ExerciseCategoryHeader {
+                        other
+                    }
+                default:
+                    unknown
                 }
-            case "Arm, Shoulder & Chest Machines":
-                ExerciseCategoryHeader {
-                    ASCMachines
-                }
-            case "Leg Machines":
-                ExerciseCategoryHeader {
-                    legMachines
-                }
-            case "Core Machines":
-                ExerciseCategoryHeader {
-                    coreMachines
-                }
-            case "Other":
-                ExerciseCategoryHeader {
-                    other
-                }
-            default:
-                unknown
             }
             editButtons
+                .frame(height: 125)
         }
         .navigationTitle(workout.name ?? "Unknown")
-        .padding(.vertical)
         .onAppear {
             viewModel.initializeDataFromCoreDataWorkout(with: workout)
         }

@@ -8,27 +8,29 @@ struct RecordExerciseView: View {
     @State var workout: String
     var body: some View {
         VStack {
-            switch viewModel.findCategory(for: workout) {
-            case "Cardio Machines":
-                cardioMachines
-            case "Arm, Shoulder & Chest Machines":
-                ASCMachines
-            case "Leg Machines":
-                legMachines
-            case "Core Machines":
-                coreMachines
-            case "Other":
-                other
-            default:
-                unknown
+            ScrollView {
+                switch viewModel.findCategory(for: workout) {
+                case "Cardio Machines":
+                    cardioMachines
+                case "Arm, Shoulder & Chest Machines":
+                    ASCMachines
+                case "Leg Machines":
+                    legMachines
+                case "Core Machines":
+                    coreMachines
+                case "Other":
+                    other
+                default:
+                    unknown
+                }
             }
             Spacer()
             timer
                 .padding()
+                .frame(height: 250)
             Spacer()
         }
         .navigationTitle(workout)
-        .padding(.top, 25)
         .onTapGesture {
             viewModel.hideKeyboard()
         }
