@@ -107,6 +107,9 @@ extension RecordExerciseView {
         @Published var reps: String = "1"
         @Published var sets: Int = 1
         
+        @Published var intensityPickerDisabled: Bool = true
+        @Published var inclinePickerDisabled: Bool = true
+        
         let repOptions: [String] = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "to failure"
         ]

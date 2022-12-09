@@ -8,12 +8,14 @@ extension EditExerciseView {
             case cardioMachinesName.treadmill.rawValue:
                 AttributeInputDoublePicker(
                     attributeTitle: "Intensity Level",
+                    pickerDisabled: $viewModel.intensityPickerDisabled,
                     pickerSelection: $viewModel.intensityLevel,
                     pickerSelections: viewModel.createDoubleArr(from: 1.0, through: 20.0, by: 0.1),
                     isDisabled: false
                 )
                 AttributeInputDoublePicker(
                     attributeTitle: "Incline Level",
+                    pickerDisabled: $viewModel.inclinePickerDisabled,
                     pickerSelection: $viewModel.inclineLevel,
                     pickerSelections: viewModel.createDoubleArr(from: 0.0, through: 20.0, by: 0.5),
                     isDisabled: false
@@ -34,6 +36,7 @@ extension EditExerciseView {
             default:
                 AttributeInputDoublePicker(
                     attributeTitle: "Intensity Level",
+                    pickerDisabled: $viewModel.intensityPickerDisabled,
                     pickerSelection: $viewModel.intensityLevel,
                     pickerSelections: viewModel.createDoubleArr(from: 1.0, through: 20.0, by: 0.1),
                     isDisabled: false
