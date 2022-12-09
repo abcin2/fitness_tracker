@@ -18,6 +18,8 @@ extension EditExerciseView {
         @Published var reps: String = "1"
         @Published var sets: Int = 1
         
+        @Published var pickerDisabled: Bool = false
+        
         var timeElapsedFormatted: String = ""
         
         func initializeDataFromCoreDataWorkout(with data: Workout) -> Void {

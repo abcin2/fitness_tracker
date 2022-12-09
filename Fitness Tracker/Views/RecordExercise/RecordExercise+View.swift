@@ -8,7 +8,6 @@ struct RecordExerciseView: View {
     @State var workout: String
     var body: some View {
         VStack {
-            ScrollView {
                 switch viewModel.findCategory(for: workout) {
                 case "Cardio Machines":
                     cardioMachines
@@ -23,7 +22,6 @@ struct RecordExerciseView: View {
                 default:
                     unknown
                 }
-            }
             Spacer()
             timer
                 .padding()
@@ -47,6 +45,6 @@ private extension RecordExerciseView {
 
 struct RecordExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordExerciseView(workout: "Bicep Curl Station")
+        RecordExerciseView(workout: "Treadmill")
     }
 }

@@ -2,6 +2,21 @@ import Combine
 import SwiftUI
 
 struct AttributeInputDoublePicker: View {
+    
+    class ViewModel: ObservableObject {
+        @Published var pickerDisabled: Bool = true
+        
+        func togglePicker() {
+            if pickerDisabled == true {
+                pickerDisabled = false
+            } else {
+                pickerDisabled = true
+            }
+        }
+    }
+    
+    @ObservedObject var viewModel = ViewModel()
+
     var attributeTitle: String
     
     @Binding var pickerSelection: Double
@@ -12,19 +27,23 @@ struct AttributeInputDoublePicker: View {
     var body: some View {
         VStack {
             HStack {
-                Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
+                Text(attributeTitle)
+                Spacer()
+                Button(String(pickerSelection)) {
+                    viewModel.togglePicker()
+                }
+                .disabled(isDisabled)
+            }
+            if !viewModel.pickerDisabled {
+                HStack {
                     Picker(attributeTitle, selection: $pickerSelection) {
                         ForEach(pickerSelections, id: \.self) { selection in
                             Text(String(format: "%.1f", selection))
                         }
                     }
-                    .disabled(isDisabled)
-                    .frame(height: 50)
+                    .pickerStyle(.wheel)
                 }
             }
-            .padding(.horizontal)
-            .overlay(Divider(), alignment: .top)
-            .overlay(Divider(), alignment: .bottom)
         }
     }
 }
