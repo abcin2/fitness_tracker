@@ -10,13 +10,8 @@ struct ExerciseCategoryHeader<Content: View>: View {
     }
     
     var body: some View {
-        VStack {
-            Text("Details:")
-                .font(.headline)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading)
+        Section(header: Text("Details:")) {
             self.content
         }
-        .padding(.vertical)
     }
 }

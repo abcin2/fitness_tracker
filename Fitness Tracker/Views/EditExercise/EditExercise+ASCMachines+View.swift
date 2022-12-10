@@ -5,51 +5,54 @@ extension EditExerciseView {
     var ASCMachines: some View {
         VStack {
             List {
-                AttributeInputTextField(
-                    attributeTitle: "Weight",
-                    textSelection: $viewModel.weight,
-                    trailingText: "lbs",
-                    isDisabled: false
-                )
-                switch workout.name {
-                case ASCMachinesName.rowMachine.rawValue:
+                timer
+                ExerciseCategoryHeader {
+                    AttributeInputTextField(
+                        attributeTitle: "Weight",
+                        textSelection: $viewModel.weight,
+                        trailingText: "lbs",
+                        isDisabled: false
+                    )
+                    switch workout.name {
+                    case ASCMachinesName.rowMachine.rawValue:
+                        AttributeInputIntPicker(
+                            attributeTitle: "Chest Setting",
+                            pickerDisabled: $viewModel.settingOnePickerDisabled,
+                            pickerSelection: $viewModel.machineSetting,
+                            pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
+                            isDisabled: false
+                        )
+                        AttributeInputIntPicker(
+                            attributeTitle: "Seat Setting",
+                            pickerDisabled: $viewModel.settingTwoPickerDisabled,
+                            pickerSelection: $viewModel.machineSetting,
+                            pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
+                            isDisabled: false
+                        )
+                    default:
+                        AttributeInputIntPicker(
+                            attributeTitle: "Machine Setting",
+                            pickerDisabled: $viewModel.settingOnePickerDisabled,
+                            pickerSelection: $viewModel.machineSetting,
+                            pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
+                            isDisabled: false
+                        )
+                    }
                     AttributeInputIntPicker(
-                        attributeTitle: "Chest Setting",
-                        pickerDisabled: $viewModel.settingOnePickerDisabled,
-                        pickerSelection: $viewModel.machineSetting,
+                        attributeTitle: "Sets",
+                        pickerDisabled: $viewModel.setsPickerDisabled,
+                        pickerSelection: $viewModel.sets,
                         pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
                         isDisabled: false
                     )
-                    AttributeInputIntPicker(
-                        attributeTitle: "Seat Setting",
-                        pickerDisabled: $viewModel.settingTwoPickerDisabled,
-                        pickerSelection: $viewModel.machineSetting,
-                        pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
-                        isDisabled: false
-                    )
-                default:
-                    AttributeInputIntPicker(
-                        attributeTitle: "Machine Setting",
-                        pickerDisabled: $viewModel.settingOnePickerDisabled,
-                        pickerSelection: $viewModel.machineSetting,
-                        pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
+                    AttributeInputStringPicker(
+                        attributeTitle: "Reps",
+                        pickerDisabled: $viewModel.repsPickerDisabled,
+                        pickerSelection: $viewModel.reps,
+                        pickerSelections: viewModel.repOptions,
                         isDisabled: false
                     )
                 }
-                AttributeInputIntPicker(
-                    attributeTitle: "Sets",
-                    pickerDisabled: $viewModel.setsPickerDisabled,
-                    pickerSelection: $viewModel.sets,
-                    pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
-                    isDisabled: false
-                )
-                AttributeInputStringPicker(
-                    attributeTitle: "Reps",
-                    pickerDisabled: $viewModel.repsPickerDisabled,
-                    pickerSelection: $viewModel.reps,
-                    pickerSelections: viewModel.repOptions,
-                    isDisabled: false
-                )
             }
             .buttonStyle(BorderlessButtonStyle())
         }

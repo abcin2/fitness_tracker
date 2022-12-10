@@ -8,20 +8,20 @@ struct RecordExerciseView: View {
     @State var workout: String
     var body: some View {
         VStack {
-                switch viewModel.findCategory(for: workout) {
-                case "Cardio Machines":
-                    cardioMachines
-                case "Arm, Shoulder & Chest Machines":
-                    ASCMachines
-                case "Leg Machines":
-                    legMachines
-                case "Core Machines":
-                    coreMachines
-                case "Other":
-                    other
-                default:
-                    unknown
-                }
+            switch viewModel.findCategory(for: workout) {
+            case "Cardio Machines":
+                cardioMachines
+            case "Arm, Shoulder & Chest Machines":
+                ASCMachines
+            case "Leg Machines":
+                legMachines
+            case "Core Machines":
+                coreMachines
+            case "Other":
+                other
+            default:
+                unknown
+            }
             Spacer()
             timer
                 .padding()

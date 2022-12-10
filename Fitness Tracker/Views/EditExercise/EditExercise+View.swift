@@ -10,32 +10,19 @@ struct EditExerciseView: View {
     @ObservedObject var viewModel = ViewModel()
     var body: some View {
         VStack {
-            ScrollView {
-                timer
-                switch workout.category {
-                case "Cardio Machines":
-                    ExerciseCategoryHeader {
-                        cardioMachines
-                    }
-                case "Arm, Shoulder & Chest Machines":
-                    ExerciseCategoryHeader {
-                        ASCMachines
-                    }
-                case "Leg Machines":
-                    ExerciseCategoryHeader {
-                        legMachines
-                    }
-                case "Core Machines":
-                    ExerciseCategoryHeader {
-                        coreMachines
-                    }
-                case "Other":
-                    ExerciseCategoryHeader {
-                        other
-                    }
-                default:
-                    unknown
-                }
+            switch workout.category {
+            case "Cardio Machines":
+                cardioMachines
+            case "Arm, Shoulder & Chest Machines":
+                ASCMachines
+            case "Leg Machines":
+                legMachines
+            case "Core Machines":
+                coreMachines
+            case "Other":
+                other
+            default:
+                unknown
             }
             editButtons
                 .frame(height: 125)
