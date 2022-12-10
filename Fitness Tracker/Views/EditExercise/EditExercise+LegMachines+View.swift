@@ -4,47 +4,55 @@ import SwiftUI
 extension EditExerciseView {
     var legMachines: some View {
         VStack {
-            Divider()
-            AttributeInputTextField(
-                attributeTitle: "Weight",
-                textSelection: $viewModel.weight,
-                isDisabled: false
-            )
-            switch workout.name {
-            case legMachinesName.seatedLegPress.rawValue:
-                AttributeInputIntPicker(
-                    attributeTitle: "Machine Setting",
-                    pickerSelection: $viewModel.machineSetting,
-                    pickerSelections: viewModel.createIntArr(from: 1, through: 15, by: 1),
+            List {
+                AttributeInputTextField(
+                    attributeTitle: "Weight",
+                    textSelection: $viewModel.weight,
+                    trailingText: "lbs",
                     isDisabled: false
                 )
-            case legMachinesName.calfExtension.rawValue:
+                switch workout.name {
+                case legMachinesName.seatedLegPress.rawValue:
+                    AttributeInputIntPicker(
+                        attributeTitle: "Machine Setting",
+                        pickerDisabled: $viewModel.settingOnePickerDisabled,
+                        pickerSelection: $viewModel.machineSetting,
+                        pickerSelections: viewModel.createIntArr(from: 1, through: 15, by: 1),
+                        isDisabled: false
+                    )
+                case legMachinesName.calfExtension.rawValue:
+                    AttributeInputIntPicker(
+                        attributeTitle: "Machine Setting",
+                        pickerDisabled: $viewModel.settingOnePickerDisabled,
+                        pickerSelection: $viewModel.machineSetting,
+                        pickerSelections: viewModel.createIntArr(from: 1, through: 5, by: 1),
+                        isDisabled: false
+                    )
+                default:
+                    AttributeInputIntPicker(
+                        attributeTitle: "Machine Setting",
+                        pickerDisabled: $viewModel.settingOnePickerDisabled,
+                        pickerSelection: $viewModel.machineSetting,
+                        pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
+                        isDisabled: false
+                    )
+                }
                 AttributeInputIntPicker(
-                    attributeTitle: "Machine Setting",
-                    pickerSelection: $viewModel.machineSetting,
-                    pickerSelections: viewModel.createIntArr(from: 1, through: 5, by: 1),
-                    isDisabled: false
-                )
-            default:
-                AttributeInputIntPicker(
-                    attributeTitle: "Machine Setting",
-                    pickerSelection: $viewModel.machineSetting,
+                    attributeTitle: "Sets",
+                    pickerDisabled: $viewModel.setsPickerDisabled,
+                    pickerSelection: $viewModel.sets,
                     pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
                     isDisabled: false
                 )
+                AttributeInputStringPicker(
+                    attributeTitle: "Reps",
+                    pickerDisabled: $viewModel.repsPickerDisabled,
+                    pickerSelection: $viewModel.reps,
+                    pickerSelections: viewModel.repOptions,
+                    isDisabled: false
+                )
             }
-            AttributeInputIntPicker(
-                attributeTitle: "Sets",
-                pickerSelection: $viewModel.sets,
-                pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
-                isDisabled: false
-            )
-            AttributeInputStringPicker(
-                attributeTitle: "Reps",
-                pickerSelection: $viewModel.reps,
-                pickerSelections: viewModel.repOptions,
-                isDisabled: false
-            )
+            .buttonStyle(BorderlessButtonStyle())
         }
     }
     

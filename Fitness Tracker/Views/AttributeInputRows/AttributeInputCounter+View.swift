@@ -11,30 +11,26 @@ struct AttributeInputCounter: View {
     var isDisabled: Bool
     
     var body: some View {
-        VStack {
-            HStack {
-                Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
-                    Button(action: {
-                        let newNum = decrementButton(counterSelection)
-                        counterSelection = newNum
-                        print(counterSelection)
-                    }) {
-                        Text("<")
-                    }
-                    .disabled(isDisabled)
-                    Text("\(counterSelection)")
-                    Button(action: {
-                        let newNum = incrementButton(counterSelection)
-                        counterSelection = newNum
-                        print(counterSelection)
-                    }) {
-                        Text(">")
-                    }
-                    .disabled(isDisabled)
+        HStack {
+            Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
+                Button(action: {
+                    let newNum = decrementButton(counterSelection)
+                    counterSelection = newNum
+                    print(counterSelection)
+                }) {
+                    Text("<")
                 }
+                .disabled(isDisabled)
+                Text("\(counterSelection)")
+                Button(action: {
+                    let newNum = incrementButton(counterSelection)
+                    counterSelection = newNum
+                    print(counterSelection)
+                }) {
+                    Text(">")
+                }
+                .disabled(isDisabled)
             }
-            .padding(.horizontal)
-            Divider()
         }
     }
 }

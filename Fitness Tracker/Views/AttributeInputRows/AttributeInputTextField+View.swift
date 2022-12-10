@@ -10,17 +10,14 @@ struct AttributeInputTextField: View {
     var isDisabled: Bool
     
     var body: some View {
-        VStack {
-            HStack {
-                Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
-                    TextField(attributeTitle, text: $textSelection)
-                        .disabled(isDisabled)
-                        .keyboardType(.numberPad)
-                    Text(trailingText ?? "")
-                }
+        HStack {
+            Section(header: Text(attributeTitle).frame(maxWidth: .infinity, alignment: .leading)) {
+                TextField(attributeTitle, text: $textSelection)
+                    .multilineTextAlignment(.trailing)
+                    .disabled(isDisabled)
+                    .keyboardType(.numberPad)
+                Text(trailingText ?? "")
             }
-            .padding(.horizontal)
-            Divider()
         }
     }
 }
