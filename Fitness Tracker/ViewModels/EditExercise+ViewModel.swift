@@ -18,8 +18,13 @@ extension EditExerciseView {
         @Published var reps: String = "1"
         @Published var sets: Int = 1
         
+        // Bools to control picker visability
         @Published var intensityPickerDisabled: Bool = true
-        @Published var inclinePickerDisabled: Bool = true
+        @Published var settingOnePickerDisabled: Bool = true
+        @Published var settingTwoPickerDisabled: Bool = true
+        @Published var settingThreePickerDisabled: Bool = true
+        @Published var setsPickerDisabled: Bool = true
+        @Published var repsPickerDisabled: Bool = true
         
         var timeElapsedFormatted: String = ""
         

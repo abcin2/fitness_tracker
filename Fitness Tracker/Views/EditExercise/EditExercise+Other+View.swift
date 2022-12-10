@@ -4,36 +4,40 @@ import SwiftUI
 extension EditExerciseView {
     var other: some View {
         VStack {
-            switch workout.name {
-            case othersName.freeweights.rawValue:
-                AttributeInputTextField(
-                    attributeTitle: "Exercise/Muscles",
-                    textSelection: $viewModel.freeWeightExercise,
-                    isDisabled: false
-                )
-                AttributeInputTextField(
-                    attributeTitle: "Weight",
-                    textSelection: $viewModel.weight,
-                    trailingText: "lbs",
-                    isDisabled: false
-                )
-                AttributeInputIntPicker(
-                    attributeTitle: "Sets",
-                    pickerSelection: $viewModel.sets,
-                    pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
-                    isDisabled: false
-                )
-                AttributeInputStringPicker(
-                    attributeTitle: "Reps",
-                    pickerSelection: $viewModel.reps,
-                    pickerSelections: viewModel.repOptions,
-                    isDisabled: false
-                )
-            default:
-                EmptyView()
+            List {
+                switch workout.name {
+                case othersName.freeweights.rawValue:
+                    AttributeInputTextField(
+                        attributeTitle: "Exercise/Muscles",
+                        textSelection: $viewModel.freeWeightExercise,
+                        isDisabled: false
+                    )
+                    AttributeInputTextField(
+                        attributeTitle: "Weight",
+                        textSelection: $viewModel.weight,
+                        trailingText: "lbs",
+                        isDisabled: false
+                    )
+                    AttributeInputIntPicker(
+                        attributeTitle: "Sets",
+                        pickerDisabled: $viewModel.setsPickerDisabled,
+                        pickerSelection: $viewModel.sets,
+                        pickerSelections: viewModel.createIntArr(from: 1, through: 10, by: 1),
+                        isDisabled: false
+                    )
+                    AttributeInputStringPicker(
+                        attributeTitle: "Reps",
+                        pickerDisabled: $viewModel.repsPickerDisabled,
+                        pickerSelection: $viewModel.reps,
+                        pickerSelections: viewModel.repOptions,
+                        isDisabled: false
+                    )
+                default:
+                    EmptyView()
+                }
             }
+            .buttonStyle(BorderlessButtonStyle())
         }
-        .overlay(Divider(), alignment: .top)
     }
     
     enum othersName: String {

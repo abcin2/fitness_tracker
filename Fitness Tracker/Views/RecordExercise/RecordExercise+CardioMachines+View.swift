@@ -16,7 +16,7 @@ extension RecordExerciseView {
                     )
                     AttributeInputDoublePicker(
                         attributeTitle: "Incline Level",
-                        pickerDisabled: $viewModel.inclinePickerDisabled,
+                        pickerDisabled: $viewModel.settingOnePickerDisabled,
                         pickerSelection: $viewModel.inclineLevel,
                         pickerSelections: viewModel.createDoubleArr(from: 0.0, through: 20.0, by: 0.5),
                         isDisabled: viewModel.fieldsDisabled
@@ -24,12 +24,14 @@ extension RecordExerciseView {
                 case cardioMachinesName.recumbentBike.rawValue, cardioMachinesName.stationaryBike.rawValue:
                     AttributeInputIntPicker(
                         attributeTitle: "Intensity Level",
+                        pickerDisabled: $viewModel.intensityPickerDisabled,
                         pickerSelection: $viewModel.bikeIntensityLevel,
                         pickerSelections: viewModel.createIntArr(from: 1, through: 50, by: 1),
                         isDisabled: viewModel.fieldsDisabled
                     )
                     AttributeInputIntPicker(
                         attributeTitle: "Seat Height",
+                        pickerDisabled: $viewModel.settingOnePickerDisabled,
                         pickerSelection: $viewModel.machineSetting,
                         pickerSelections: viewModel.createIntArr(from: 1, through: 25, by: 1),
                         isDisabled: viewModel.fieldsDisabled

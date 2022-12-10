@@ -11,16 +11,20 @@ struct AttributeInputDoublePicker: View {
     
     var isDisabled: Bool
     
+    func togglePicker() {
+        if pickerDisabled == false {
+            pickerDisabled = true
+        } else if pickerDisabled == true {
+            pickerDisabled = false
+        }
+    }
+    
     var body: some View {
         HStack {
             Text(attributeTitle)
             Spacer()
             Button(String(pickerSelection)) {
-                if pickerDisabled == false {
-                    pickerDisabled = true
-                } else if pickerDisabled == true {
-                    pickerDisabled = false
-                }
+               togglePicker()
             }
             .disabled(isDisabled)
         }
