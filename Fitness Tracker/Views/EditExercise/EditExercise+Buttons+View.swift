@@ -42,7 +42,7 @@ extension EditExerciseView {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(.blue)
-                        .foregroundColor(.white)
+                        .foregroundColor(.white.opacity(0))
                         .font(.subheadline)
                         .cornerRadius(10)
                 }
