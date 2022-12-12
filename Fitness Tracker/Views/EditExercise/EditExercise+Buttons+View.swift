@@ -14,7 +14,7 @@ extension EditExerciseView {
                     Text("Delete")
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(.white)
+                        .background(.white.opacity(0))
                         .foregroundColor(.blue)
                         .font(.subheadline)
                         .cornerRadius(10)
@@ -42,12 +42,13 @@ extension EditExerciseView {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(.blue)
-                        .foregroundColor(.white.opacity(0))
+                        .foregroundColor(.white)
                         .font(.subheadline)
                         .cornerRadius(10)
                 }
             }
             .padding(.horizontal)
         }
+        .padding(.bottom)
     }
 }

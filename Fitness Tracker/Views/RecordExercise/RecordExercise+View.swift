@@ -4,6 +4,8 @@ import Combine
 struct RecordExerciseView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Workout.entity(), sortDescriptors: [])
+    var workouts: FetchedResults<Workout>
     @ObservedObject var viewModel = ViewModel()
     @State var workout: String
     var body: some View {
@@ -29,6 +31,9 @@ struct RecordExerciseView: View {
             Spacer()
         }
         .navigationTitle(workout)
+        .onAppear {
+            viewModel.initializeDataFromPreviousRecordedWorkout(with: workouts, workout: workout)
+        }
         .onTapGesture {
             viewModel.hideKeyboard()
         }

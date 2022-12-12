@@ -1,4 +1,6 @@
+import Combine
 import Foundation
+import SwiftUI
 import UIKit
 import WidgetKit
 
@@ -114,6 +116,30 @@ extension RecordExerciseView {
         @Published var settingThreePickerDisabled: Bool = true
         @Published var setsPickerDisabled: Bool = true
         @Published var repsPickerDisabled: Bool = true
+        
+        func initializeDataFromPreviousRecordedWorkout(with data: FetchedResults<Workout>, workout: String) -> Void {
+            var foundExercise: Workout? = nil
+            // var dataFound: Bool = false
+            for exercise in data {
+                if exercise.name == workout {
+                    // dataFound = true
+                    foundExercise = exercise
+                    break // only populates with the most recent data
+                }
+            }
+            if foundExercise != nil {
+                /// existing data here from foundExercise equal to all Published vars in viewModel
+                intensityLevel = foundExercise!.intensity
+                bikeIntensityLevel = Int(foundExercise!.bikeIntensity)
+                inclineLevel = foundExercise!.incline
+                machineSetting = Int(foundExercise!.adjustment)
+                weight = foundExercise!.weight!
+                freeWeightExercise = foundExercise!.freeWeightExercise!
+                reps = foundExercise!.reps!
+                sets = Int(foundExercise!.sets)
+            }
+            /// may not need else statement since values are already populated with defaults from viewModel
+        }
         
         let repOptions: [String] = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "to failure"
