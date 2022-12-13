@@ -31,7 +31,6 @@ extension EditExerciseView {
                         exercise.intensity = viewModel.intensityLevel
                         exercise.bikeIntensity = Int16(viewModel.bikeIntensityLevel)
                         exercise.length = viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
-                        // exercise.dateCompleted = Date.now
                         exercise.reps = viewModel.reps
                         exercise.sets = Int16(viewModel.sets)
                         try? moc.save()
