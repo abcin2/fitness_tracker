@@ -50,6 +50,17 @@ struct DashboardView: View {
                     }
                     .frame(height: 250)
                 }
+                HStack {
+                    NavigationLink(destination: BreakdownHistoryView()) {
+                        Text("compare past weeks")
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(.white.opacity(0))
+                            .foregroundColor(.blue)
+                            .font(.subheadline)
+                            .cornerRadius(10)
+                    }
+                }
             }
             .padding(.bottom)
             HStack {
