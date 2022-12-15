@@ -49,16 +49,15 @@ struct DashboardView: View {
                         )
                     }
                     .frame(height: 250)
-                }
-                HStack {
-                    NavigationLink(destination: BreakdownHistoryView()) {
+                    ZStack {
+                        NavigationLink(destination: BreakdownHistoryView()) {
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .opacity(0.0)
                         Text("compare past weeks")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(.white.opacity(0))
                             .foregroundColor(.blue)
-                            .font(.subheadline)
-                            .cornerRadius(10)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .fontWeight(.light)
                     }
                 }
             }
@@ -89,7 +88,7 @@ struct DashboardView: View {
             .padding(.horizontal)
             Spacer()
         }
-        .padding(.vertical, 8)
+        .padding(.bottom, 8)
         .navigationTitle("Dashboard")
     }
 }

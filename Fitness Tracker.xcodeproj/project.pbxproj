@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3343234729482C1F00B03716 /* BreakdownHistory+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3343234629482C1F00B03716 /* BreakdownHistory+View.swift */; };
+		334323492948AC4500B03716 /* BreakdownHistory+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334323482948AC4500B03716 /* BreakdownHistory+ViewModel.swift */; };
+		3343234B2949FE0D00B03716 /* BreakdownHistory+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3343234A2949FE0D00B03716 /* BreakdownHistory+Model.swift */; };
 		33D8C0EF29382BA1000B00D5 /* Fitness_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C0EE29382BA1000B00D5 /* Fitness_TrackerApp.swift */; };
 		33D8C0F129382BA1000B00D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8C0F029382BA1000B00D5 /* ContentView.swift */; };
 		33D8C0F329382BA2000B00D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D8C0F229382BA2000B00D5 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		3343234629482C1F00B03716 /* BreakdownHistory+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreakdownHistory+View.swift"; sourceTree = "<group>"; };
+		334323482948AC4500B03716 /* BreakdownHistory+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreakdownHistory+ViewModel.swift"; sourceTree = "<group>"; };
+		3343234A2949FE0D00B03716 /* BreakdownHistory+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreakdownHistory+Model.swift"; sourceTree = "<group>"; };
 		33D8C0EB29382BA1000B00D5 /* Fitness Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D8C0EE29382BA1000B00D5 /* Fitness_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitness_TrackerApp.swift; sourceTree = "<group>"; };
 		33D8C0F029382BA1000B00D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				33D8C11C293965F9000B00D5 /* ExercisesList+ViewModel.swift */,
 				33D8C11B293965F9000B00D5 /* RecordExercise+ViewModel.swift */,
 				33D8C11A293965F9000B00D5 /* EditExercise+ViewModel.swift */,
+				334323482948AC4500B03716 /* BreakdownHistory+ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				33D8C10A29396537000B00D5 /* Exercises+Model.swift */,
+				3343234A2949FE0D00B03716 /* BreakdownHistory+Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,7 +308,9 @@
 				33D8C12C29399201000B00D5 /* RecordExercise+Other+View.swift in Sources */,
 				33D8C1092938D96A000B00D5 /* TestDataView.swift in Sources */,
 				33D8C13B2939A69E000B00D5 /* EditExercise+Timer+View.swift in Sources */,
+				334323492948AC4500B03716 /* BreakdownHistory+ViewModel.swift in Sources */,
 				33D8C146293E55C3000B00D5 /* AttributeInputCounter+View.swift in Sources */,
+				3343234B2949FE0D00B03716 /* BreakdownHistory+Model.swift in Sources */,
 				33D8C1352939A517000B00D5 /* EditExercise+LegMachines+View.swift in Sources */,
 				33D8C0F129382BA1000B00D5 /* ContentView.swift in Sources */,
 				33D8C12A293991A7000B00D5 /* RecordExercise+CoreMachines+View.swift in Sources */,
