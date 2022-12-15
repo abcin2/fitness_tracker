@@ -2,6 +2,7 @@ import SwiftUI
 
 struct BreakdownHistoryView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.dateCompleted)]) var workouts: FetchedResults<Workout>
+    @FetchRequest(sortDescriptors: []) var previousWeeks: FetchedResults<PreviousWeek>
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel = ViewModel()
     
@@ -27,6 +28,11 @@ struct BreakdownHistoryView: View {
                         Text(String(week.minutesPerDay ?? 0.0))
                     }
                 }
+            }
+        }
+        List {
+            ForEach(previousWeeks, id: \.self) { week in
+                Text(week.weekOf ?? "")
             }
         }
     }
