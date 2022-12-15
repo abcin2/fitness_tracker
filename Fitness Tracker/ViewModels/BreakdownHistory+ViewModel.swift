@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 extension BreakdownHistoryView {
     final class ViewModel: ObservableObject {
