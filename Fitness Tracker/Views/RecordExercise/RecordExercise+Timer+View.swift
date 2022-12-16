@@ -73,10 +73,30 @@ extension RecordExerciseView {
                         exercise.reps = viewModel.reps
                         exercise.sets = Int16(viewModel.sets)
                         try? moc.save()
-                        // save workout to previous week entity
+                        // save workout to previous week entity if it is the first workout of the week
+                        // if statement needed when more workouts are added to week
                         let previousWeek = PreviousWeek(context: moc)
                         previousWeek.id = UUID()
-                        previousWeek.weekOf = "Week of here"
+                        previousWeek.weekOf = viewModel.findDateRangeOfThisWeek()
+                        // switch to determine day
+                        switch Date.now.formatted(.dateTime.weekday()) {
+                        case "Mon":
+                            previousWeek.minutesMon += viewModel.secondsElapsed
+                        case "Tue":
+                            previousWeek.minutesTue += viewModel.secondsElapsed
+                        case "Wed":
+                            previousWeek.minutesWed += viewModel.secondsElapsed
+                        case "Thu":
+                            previousWeek.minutesThu += viewModel.secondsElapsed
+                        case "Fri":
+                            previousWeek.minutesFri += viewModel.secondsElapsed
+                        case "Sat":
+                            previousWeek.minutesSat += viewModel.secondsElapsed
+                        case "Sun":
+                            previousWeek.minutesSun += viewModel.secondsElapsed
+                        default:
+                            return
+                        }
                         try? moc.save()
                         viewModel.confirmSaveWorkout()
                         presentationMode.wrappedValue.dismiss()

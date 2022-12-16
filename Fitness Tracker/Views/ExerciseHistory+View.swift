@@ -9,6 +9,7 @@ struct ExerciseHistoryView: View {
         for offset in offsets {
             let workout = workouts[offset]
             moc.delete(workout)
+            // will need to remove time from PreviousWeek in this logic
         }
         try? moc.save()
     }

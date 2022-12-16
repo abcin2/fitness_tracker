@@ -33,6 +33,8 @@ struct BreakdownHistoryView: View {
         List {
             ForEach(previousWeeks, id: \.self) { week in
                 Text(week.weekOf ?? "")
+                // should check if any time exists in the week
+                // if not, do not display week at all
             }
         }
     }
