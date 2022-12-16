@@ -6,6 +6,8 @@ struct RecordExerciseView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Workout.entity(), sortDescriptors: [])
     var workouts: FetchedResults<Workout>
+    @FetchRequest(entity: PreviousWeek.entity(), sortDescriptors: [])
+    var previousWeeks: FetchedResults<PreviousWeek>
     @ObservedObject var viewModel = ViewModel()
     @State var workout: String
     var body: some View {

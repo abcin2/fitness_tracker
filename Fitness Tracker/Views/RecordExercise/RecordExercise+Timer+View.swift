@@ -72,30 +72,49 @@ extension RecordExerciseView {
                         exercise.dateCompleted = Date.now
                         exercise.reps = viewModel.reps
                         exercise.sets = Int16(viewModel.sets)
-                        try? moc.save()
-                        // save workout to previous week entity if it is the first workout of the week
                         // if statement needed when more workouts are added to week
-                        let previousWeek = PreviousWeek(context: moc)
-                        previousWeek.id = UUID()
-                        previousWeek.weekOf = viewModel.findDateRangeOfThisWeek()
-                        // switch to determine day
-                        switch Date.now.formatted(.dateTime.weekday()) {
-                        case "Mon":
-                            previousWeek.minutesMon += viewModel.secondsElapsed
-                        case "Tue":
-                            previousWeek.minutesTue += viewModel.secondsElapsed
-                        case "Wed":
-                            previousWeek.minutesWed += viewModel.secondsElapsed
-                        case "Thu":
-                            previousWeek.minutesThu += viewModel.secondsElapsed
-                        case "Fri":
-                            previousWeek.minutesFri += viewModel.secondsElapsed
-                        case "Sat":
-                            previousWeek.minutesSat += viewModel.secondsElapsed
-                        case "Sun":
-                            previousWeek.minutesSun += viewModel.secondsElapsed
-                        default:
-                            return
+                        if let existingPreviousWeek = previousWeeks.first(where: {$0.weekOf == viewModel.findDateRangeOfThisWeek()}) {
+                            switch Date.now.formatted(.dateTime.weekday()) {
+                            case "Mon":
+                                existingPreviousWeek.minutesMon += viewModel.secondsElapsed
+                            case "Tue":
+                                existingPreviousWeek.minutesTue += viewModel.secondsElapsed
+                            case "Wed":
+                                existingPreviousWeek.minutesWed += viewModel.secondsElapsed
+                            case "Thu":
+                                existingPreviousWeek.minutesThu += viewModel.secondsElapsed
+                            case "Fri":
+                                existingPreviousWeek.minutesFri += viewModel.secondsElapsed
+                            case "Sat":
+                                existingPreviousWeek.minutesSat += viewModel.secondsElapsed
+                            case "Sun":
+                                existingPreviousWeek.minutesSun += viewModel.secondsElapsed
+                            default:
+                                return
+                            }
+                        // save workout to previous week entity if it is the first workout of the week
+                        } else {
+                            let previousWeek = PreviousWeek(context: moc)
+                            previousWeek.id = UUID()
+                            previousWeek.weekOf = viewModel.findDateRangeOfThisWeek()
+                            switch Date.now.formatted(.dateTime.weekday()) {
+                            case "Mon":
+                                previousWeek.minutesMon += viewModel.secondsElapsed
+                            case "Tue":
+                                previousWeek.minutesTue += viewModel.secondsElapsed
+                            case "Wed":
+                                previousWeek.minutesWed += viewModel.secondsElapsed
+                            case "Thu":
+                                previousWeek.minutesThu += viewModel.secondsElapsed
+                            case "Fri":
+                                previousWeek.minutesFri += viewModel.secondsElapsed
+                            case "Sat":
+                                previousWeek.minutesSat += viewModel.secondsElapsed
+                            case "Sun":
+                                previousWeek.minutesSun += viewModel.secondsElapsed
+                            default:
+                                return
+                            }
                         }
                         try? moc.save()
                         viewModel.confirmSaveWorkout()
