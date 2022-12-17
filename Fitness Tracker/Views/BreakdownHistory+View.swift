@@ -32,11 +32,6 @@ struct BreakdownHistoryView: View {
     }
     
     var body: some View {
-        let breakdownHistoryGraphs: [BreakdownHistoryGraph] = [
-            BreakdownHistoryGraph(dateRange: "Week 1", minutesPerDay: nil, graphs: [graphOne, graphTwo, graphThree]),
-            BreakdownHistoryGraph(dateRange: "Week 2", minutesPerDay: nil, graphs: [graphOne, graphTwo, graphThree]),
-            BreakdownHistoryGraph(dateRange: "Week 2", minutesPerDay: nil, graphs: [graphOne, graphTwo, graphThree])
-        ]
         if viewModel.weeksOf.count == 0 {
             Text("Sorry, there is no data to display.")
         } else {
