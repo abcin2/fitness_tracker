@@ -182,7 +182,7 @@ extension RecordExerciseView {
             let currentWeekday = Date.now.formatted(.dateTime.weekday())
             if currentWeekday == "Mon" {
                 dateRange += dateFormatter.string(from: Date.now)
-                dateRange += " to "
+                dateRange += " - "
                 let endOfWeek = Calendar.current.date(byAdding: .day, value: 6, to: Date.now)!
                 dateRange += dateFormatter.string(from: endOfWeek)
             } else {
@@ -191,7 +191,7 @@ extension RecordExerciseView {
                     if selectedWeekday == "Mon" {
                         let firstMondayOfWeek = Calendar.current.date(byAdding: .day, value: -(num), to: Date.now)!
                         dateRange += dateFormatter.string(from: firstMondayOfWeek)
-                        dateRange += " to "
+                        dateRange += " - "
                         let endOfWeek = Calendar.current.date(byAdding: .day, value: 6, to: firstMondayOfWeek)!
                         dateRange += dateFormatter.string(from: endOfWeek)
                     }
