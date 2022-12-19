@@ -1,3 +1,4 @@
+import Charts
 import SwiftUI
 
 struct BreakdownHistoryView: View {
@@ -40,7 +41,37 @@ struct BreakdownHistoryView: View {
                         if week.dateRange != nil {
                             Text(week.dateRange ?? "")
                         } else {
-                            Text(String((week.minutesPerDay?[3].time)!))
+                            Chart {
+                                BarMark (
+                                    x: .value("Day", "Mon"),
+                                    y: .value("Total Minutes", week.minutesPerDay?[0].time ?? 0.0)
+                                )
+                                BarMark (
+                                    x: .value("Day", "Tue"),
+                                    y: .value("Total Minutes", week.minutesPerDay?[1].time ?? 0.0)
+                                )
+                                BarMark (
+                                    x: .value("Day", "Wed"),
+                                    y: .value("Total Minutes", week.minutesPerDay?[2].time ?? 0.0)
+                                )
+                                BarMark (
+                                    x: .value("Day", "Thu"),
+                                    y: .value("Total Minutes", week.minutesPerDay?[3].time ?? 0.0)
+                                )
+                                BarMark (
+                                    x: .value("Day", "Fri"),
+                                    y: .value("Total Minutes", week.minutesPerDay?[4].time ?? 0.0)
+                                )
+                                BarMark (
+                                    x: .value("Day", "Sat"),
+                                    y: .value("Total Minutes", week.minutesPerDay?[5].time ?? 0.0)
+                                )
+                                BarMark (
+                                    x: .value("Day", "Sun"),
+                                    y: .value("Total Minutes", week.minutesPerDay?[6].time ?? 0.0)
+                                )
+                            }
+                            .frame(height: 250)
                         }
                     }
                     // should check if any time exists in the week
