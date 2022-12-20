@@ -76,19 +76,19 @@ extension RecordExerciseView {
                         if let existingPreviousWeek = previousWeeks.first(where: {$0.weekOf == viewModel.findDateRangeOfThisWeek()}) {
                             switch Date.now.formatted(.dateTime.weekday()) {
                             case "Mon":
-                                existingPreviousWeek.minutesMon += viewModel.secondsElapsed
+                                existingPreviousWeek.minutesMon += (viewModel.secondsElapsed / 60)
                             case "Tue":
-                                existingPreviousWeek.minutesTue += viewModel.secondsElapsed
+                                existingPreviousWeek.minutesTue += (viewModel.secondsElapsed / 60)
                             case "Wed":
-                                existingPreviousWeek.minutesWed += viewModel.secondsElapsed
+                                existingPreviousWeek.minutesWed += (viewModel.secondsElapsed / 60)
                             case "Thu":
-                                existingPreviousWeek.minutesThu += viewModel.secondsElapsed
+                                existingPreviousWeek.minutesThu += (viewModel.secondsElapsed / 60)
                             case "Fri":
-                                existingPreviousWeek.minutesFri += viewModel.secondsElapsed
+                                existingPreviousWeek.minutesFri += (viewModel.secondsElapsed / 60)
                             case "Sat":
-                                existingPreviousWeek.minutesSat += viewModel.secondsElapsed
+                                existingPreviousWeek.minutesSat += (viewModel.secondsElapsed / 60)
                             case "Sun":
-                                existingPreviousWeek.minutesSun += viewModel.secondsElapsed
+                                existingPreviousWeek.minutesSun += (viewModel.secondsElapsed / 60)
                             default:
                                 return
                             }
@@ -99,19 +99,19 @@ extension RecordExerciseView {
                             previousWeek.weekOf = viewModel.findDateRangeOfThisWeek()
                             switch Date.now.formatted(.dateTime.weekday()) {
                             case "Mon":
-                                previousWeek.minutesMon += viewModel.secondsElapsed
+                                previousWeek.minutesMon += (viewModel.secondsElapsed / 60)
                             case "Tue":
-                                previousWeek.minutesTue += viewModel.secondsElapsed
+                                previousWeek.minutesTue += (viewModel.secondsElapsed / 60)
                             case "Wed":
-                                previousWeek.minutesWed += viewModel.secondsElapsed
+                                previousWeek.minutesWed += (viewModel.secondsElapsed / 60)
                             case "Thu":
-                                previousWeek.minutesThu += viewModel.secondsElapsed
+                                previousWeek.minutesThu += (viewModel.secondsElapsed / 60)
                             case "Fri":
-                                previousWeek.minutesFri += viewModel.secondsElapsed
+                                previousWeek.minutesFri += (viewModel.secondsElapsed / 60)
                             case "Sat":
-                                previousWeek.minutesSat += viewModel.secondsElapsed
+                                previousWeek.minutesSat += (viewModel.secondsElapsed / 60)
                             case "Sun":
-                                previousWeek.minutesSun += viewModel.secondsElapsed
+                                previousWeek.minutesSun += (viewModel.secondsElapsed / 60)
                             default:
                                 return
                             }
