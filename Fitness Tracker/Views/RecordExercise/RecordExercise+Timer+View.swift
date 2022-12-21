@@ -70,52 +70,9 @@ extension RecordExerciseView {
                         exercise.bikeIntensity = Int16(viewModel.bikeIntensityLevel)
                         exercise.length = viewModel.secondsElapsed
                         exercise.dateCompleted = Date.now
+                        exercise.dateRange = viewModel.findDateRangeOfThisWeek()
                         exercise.reps = viewModel.reps
                         exercise.sets = Int16(viewModel.sets)
-                        // if statement needed when more workouts are added to week
-                        if let existingPreviousWeek = previousWeeks.first(where: {$0.weekOf == viewModel.findDateRangeOfThisWeek()}) {
-                            switch Date.now.formatted(.dateTime.weekday()) {
-                            case "Mon":
-                                existingPreviousWeek.minutesMon += (viewModel.secondsElapsed / 60)
-                            case "Tue":
-                                existingPreviousWeek.minutesTue += (viewModel.secondsElapsed / 60)
-                            case "Wed":
-                                existingPreviousWeek.minutesWed += (viewModel.secondsElapsed / 60)
-                            case "Thu":
-                                existingPreviousWeek.minutesThu += (viewModel.secondsElapsed / 60)
-                            case "Fri":
-                                existingPreviousWeek.minutesFri += (viewModel.secondsElapsed / 60)
-                            case "Sat":
-                                existingPreviousWeek.minutesSat += (viewModel.secondsElapsed / 60)
-                            case "Sun":
-                                existingPreviousWeek.minutesSun += (viewModel.secondsElapsed / 60)
-                            default:
-                                return
-                            }
-                        // save workout to previous week entity if it is the first workout of the week
-                        } else {
-                            let previousWeek = PreviousWeek(context: moc)
-                            previousWeek.id = UUID()
-                            previousWeek.weekOf = viewModel.findDateRangeOfThisWeek()
-                            switch Date.now.formatted(.dateTime.weekday()) {
-                            case "Mon":
-                                previousWeek.minutesMon += (viewModel.secondsElapsed / 60)
-                            case "Tue":
-                                previousWeek.minutesTue += (viewModel.secondsElapsed / 60)
-                            case "Wed":
-                                previousWeek.minutesWed += (viewModel.secondsElapsed / 60)
-                            case "Thu":
-                                previousWeek.minutesThu += (viewModel.secondsElapsed / 60)
-                            case "Fri":
-                                previousWeek.minutesFri += (viewModel.secondsElapsed / 60)
-                            case "Sat":
-                                previousWeek.minutesSat += (viewModel.secondsElapsed / 60)
-                            case "Sun":
-                                previousWeek.minutesSun += (viewModel.secondsElapsed / 60)
-                            default:
-                                return
-                            }
-                        }
                         try? moc.save()
                         viewModel.confirmSaveWorkout()
                         presentationMode.wrappedValue.dismiss()
