@@ -3,37 +3,56 @@ import SwiftUI
 
 struct BreakdownHistoryView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.dateCompleted)]) var workouts: FetchedResults<Workout>
-    @FetchRequest(sortDescriptors: []) var previousWeeks: FetchedResults<PreviousWeek>
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel = ViewModel()
 
-    // using fetched data to create the same objects
+    // go through each workout
+    // put date ranges in a set?
+    // if workout.dateRange is equal to each, assign minutes to respective days
+    func getDateRanges() -> Set<String> {
+        var ranges: Set<String> = []
+        for workout in workouts {
+            ranges.insert(workout.dateRange ?? "Uknown Range")
+        }
+        // need to sort ranges
+        return ranges
+    }
+    
+    func getExercisesForEachRange() -> [String:[Workout]] {
+        var exercises: [String:[Workout]] = [:]
+        for workout in workouts {
+            exercises[workout.dateRange ?? "Uknown Range"]?.append(workout)
+        }
+        // need to sort ranges
+        return exercises
+    }
+    
     func getDateRange() -> [BreakdownHistoryGraph] {
         var breakdownHistoryGraphs: [BreakdownHistoryGraph] = []
-        for week in previousWeeks {
-            breakdownHistoryGraphs.append(BreakdownHistoryGraph(dateRange: week.weekOf, minutesPerDay: nil, graphs: getTotalTimes()))
+        for range in getExercisesForEachRange().keys {
+            breakdownHistoryGraphs.append(BreakdownHistoryGraph(dateRange: range, minutesPerDay: nil, graphs: nil))
         }
         return breakdownHistoryGraphs
     }
     
-    func getTotalTimes() -> [BreakdownHistoryGraph] {
-        var graphs: [BreakdownHistoryGraph] = []
-        for week in previousWeeks {
-            graphs.append(BreakdownHistoryGraph(dateRange: nil, minutesPerDay: [
-                minutesPerDay(dayOfWeek: .mon, time: week.minutesMon),
-                minutesPerDay(dayOfWeek: .tue, time: week.minutesTue),
-                minutesPerDay(dayOfWeek: .wed, time: week.minutesWed),
-                minutesPerDay(dayOfWeek: .thu, time: week.minutesThu),
-                minutesPerDay(dayOfWeek: .fri, time: week.minutesFri),
-                minutesPerDay(dayOfWeek: .sat, time: week.minutesSat),
-                minutesPerDay(dayOfWeek: .sun, time: week.minutesSun),
-            ], graphs: nil))
-        }
-        return graphs
-    }
+//    func getTotalTimes() -> [BreakdownHistoryGraph] {
+//        var graphs: [BreakdownHistoryGraph] = []
+//        for workout in workouts {
+//            graphs.append(BreakdownHistoryGraph(dateRange: nil, minutesPerDay: [
+//                minutesPerDay(dayOfWeek: .mon, time: week.minutesMon),
+//                minutesPerDay(dayOfWeek: .tue, time: week.minutesTue),
+//                minutesPerDay(dayOfWeek: .wed, time: week.minutesWed),
+//                minutesPerDay(dayOfWeek: .thu, time: week.minutesThu),
+//                minutesPerDay(dayOfWeek: .fri, time: week.minutesFri),
+//                minutesPerDay(dayOfWeek: .sat, time: week.minutesSat),
+//                minutesPerDay(dayOfWeek: .sun, time: week.minutesSun),
+//            ], graphs: nil))
+//        }
+//        return graphs
+//    }
     
     var body: some View {
-        if viewModel.weeksOf.count == 0 {
+        if getDateRanges().isEmpty {
             Text("Sorry, there is no data to display.")
         } else {
             List(getDateRange(), children: \.graphs) { week in
