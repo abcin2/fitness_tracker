@@ -21,7 +21,8 @@ struct BreakdownHistoryView: View {
     func getExercisesForEachRange() -> [String:[Workout]] {
         var exercises: [String:[Workout]] = [:]
         for workout in workouts {
-            exercises[workout.dateRange ?? "Uknown Range"]?.append(workout)
+            exercises[workout.dateRange ?? "Uknown Range"]?.append(workout) // this line is not working!!!!
+            // probably because the keys do not exist yet -> "?"
         }
         // need to sort ranges
         return exercises
@@ -30,35 +31,35 @@ struct BreakdownHistoryView: View {
     func getDateRange() -> [BreakdownHistoryGraph] {
         var breakdownHistoryGraphs: [BreakdownHistoryGraph] = []
         for range in getExercisesForEachRange().keys {
-            breakdownHistoryGraphs.append(BreakdownHistoryGraph(dateRange: range, minutesPerDay: nil, graphs: nil))
+            breakdownHistoryGraphs.append(BreakdownHistoryGraph(dateRange: range, minutesPerDay: nil, graphs: getTotalTimes()))
         }
         return breakdownHistoryGraphs
     }
     
-//    func getTotalTimes() -> [BreakdownHistoryGraph] {
-//        var graphs: [BreakdownHistoryGraph] = []
-//        for workout in workouts {
-//            graphs.append(BreakdownHistoryGraph(dateRange: nil, minutesPerDay: [
-//                minutesPerDay(dayOfWeek: .mon, time: week.minutesMon),
-//                minutesPerDay(dayOfWeek: .tue, time: week.minutesTue),
-//                minutesPerDay(dayOfWeek: .wed, time: week.minutesWed),
-//                minutesPerDay(dayOfWeek: .thu, time: week.minutesThu),
-//                minutesPerDay(dayOfWeek: .fri, time: week.minutesFri),
-//                minutesPerDay(dayOfWeek: .sat, time: week.minutesSat),
-//                minutesPerDay(dayOfWeek: .sun, time: week.minutesSun),
-//            ], graphs: nil))
-//        }
-//        return graphs
-//    }
+    func getTotalTimes() -> [BreakdownHistoryGraph] {
+        var graphs: [BreakdownHistoryGraph] = []
+        for _ in workouts {
+            graphs.append(BreakdownHistoryGraph(dateRange: nil, minutesPerDay: [
+                minutesPerDay(dayOfWeek: .mon, time: 1),
+                minutesPerDay(dayOfWeek: .tue, time: 1),
+                minutesPerDay(dayOfWeek: .wed, time: 1),
+                minutesPerDay(dayOfWeek: .thu, time: 1),
+                minutesPerDay(dayOfWeek: .fri, time: 1),
+                minutesPerDay(dayOfWeek: .sat, time: 1),
+                minutesPerDay(dayOfWeek: .sun, time: 1),
+            ], graphs: nil))
+        }
+        return graphs
+    }
     
     var body: some View {
-        if getDateRanges().isEmpty {
+        if getDateRange().isEmpty {
             Text("Sorry, there is no data to display.")
         } else {
             List(getDateRange(), children: \.graphs) { week in
                     HStack {
                         if week.dateRange != nil {
-                            Text(week.dateRange ?? "")
+                            Text(week.dateRange ?? "test")
                         } else {
                             Chart {
                                 BarMark (
