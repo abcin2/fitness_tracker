@@ -12,7 +12,7 @@ struct BreakdownHistoryView: View {
         } else {
             List(viewModel.getDateRange(with: workouts), children: \.graphs) { week in
                     HStack {
-                        if week.dateRange != nil && week.dateRange != "Uknown" {
+                        if week.dateRange != nil && week.dateRange != "Uknown Range" {
                             Text(week.dateRange ?? "test")
                         } else {
                             Chart {
