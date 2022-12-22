@@ -15,7 +15,6 @@ struct AttributeInputTextField: View {
                 TextField(attributeTitle, text: $textSelection)
                     .multilineTextAlignment(.trailing)
                     .disabled(isDisabled)
-                    .keyboardType(.numberPad)
                 Text(trailingText ?? "")
             }
         }
