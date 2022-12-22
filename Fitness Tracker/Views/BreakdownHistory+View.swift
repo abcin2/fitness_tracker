@@ -41,15 +41,46 @@ struct BreakdownHistoryView: View {
     
     func getTotalTimes() -> [BreakdownHistoryGraph] {
         var graphs: [BreakdownHistoryGraph] = []
-        for _ in workouts {
+        for range in getDateRanges() {
+            var secondsPerDay: [String:Double] = [
+                "Mon": 0.0,
+                "Tue": 0.0,
+                "Wed": 0.0,
+                "Thu": 0.0,
+                "Fri": 0.0,
+                "Sat": 0.0,
+                "Sun": 0.0
+            ]
+            for workout in workouts {
+                if workout.dateRange == range {
+                    switch workout.dateCompleted?.formatted(.dateTime.weekday()) {
+                    case "Mon":
+                        secondsPerDay["Mon"]! += workout.length
+                    case "Tue":
+                        secondsPerDay["Tue"]! += workout.length
+                    case "Wed":
+                        secondsPerDay["Wed"]! += workout.length
+                    case "Thu":
+                        secondsPerDay["Thu"]! += workout.length
+                    case "Fri":
+                        secondsPerDay["Fri"]! += workout.length
+                    case "Sat":
+                        secondsPerDay["Sat"]! += workout.length
+                    case "Sun":
+                        secondsPerDay["Sun"]! += workout.length
+                    default:
+                        secondsPerDay["Uknown"]! += workout.length
+                    }
+                }
+            }
             graphs.append(BreakdownHistoryGraph(dateRange: nil, minutesPerDay: [
-                minutesPerDay(dayOfWeek: .mon, time: 1),
-                minutesPerDay(dayOfWeek: .tue, time: 1),
-                minutesPerDay(dayOfWeek: .wed, time: 1),
-                minutesPerDay(dayOfWeek: .thu, time: 1),
-                minutesPerDay(dayOfWeek: .fri, time: 1),
-                minutesPerDay(dayOfWeek: .sat, time: 1),
-                minutesPerDay(dayOfWeek: .sun, time: 1),
+                minutesPerDay(dayOfWeek: .mon, time: (secondsPerDay["Mon"] ?? 0.0) / 60),
+                minutesPerDay(dayOfWeek: .tue, time: (secondsPerDay["Tue"] ?? 0.0) / 60),
+                minutesPerDay(dayOfWeek: .wed, time: (secondsPerDay["Wed"] ?? 0.0) / 60),
+                minutesPerDay(dayOfWeek: .thu, time: (secondsPerDay["Thu"] ?? 0.0) / 60),
+                minutesPerDay(dayOfWeek: .fri, time: (secondsPerDay["Fri"] ?? 0.0) / 60),
+                minutesPerDay(dayOfWeek: .sat, time: (secondsPerDay["Sat"] ?? 0.0) / 60),
+                minutesPerDay(dayOfWeek: .sun, time: (secondsPerDay["Sun"] ?? 0.0) / 60)
             ], graphs: nil))
         }
         return graphs
