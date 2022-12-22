@@ -4,6 +4,7 @@ import SwiftUI
 extension BreakdownHistoryView {
     final class ViewModel: ObservableObject {
         
+        // need to change all "??" -> possibly to "!" instead or may need to use gaurd statements as an alternative
         func getDateRange(with data: FetchedResults<Workout>) -> [BreakdownHistoryGraph] {
             var breakdownHistoryGraphs: [BreakdownHistoryGraph] = []
             for range in getExercisesForEachRange(with: data).keys {

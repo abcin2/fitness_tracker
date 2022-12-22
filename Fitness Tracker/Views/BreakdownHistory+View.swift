@@ -11,7 +11,7 @@ struct BreakdownHistoryView: View {
             Text("Sorry, there is no data to display.")
         } else {
             List(viewModel.getDateRange(with: workouts), children: \.graphs) { week in
-                if week.dateRange != "Unknown Range" { // for now, exercises which were recorded previously, will not be displayed in the history breakdown
+                if week.dateRange != nil { // still not working...
                         HStack {
                             if week.dateRange != nil {
                                 Text(week.dateRange ?? "test")
