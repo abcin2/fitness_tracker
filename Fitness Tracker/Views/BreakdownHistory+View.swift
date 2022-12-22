@@ -21,8 +21,11 @@ struct BreakdownHistoryView: View {
     func getExercisesForEachRange() -> [String:[Workout]] {
         var exercises: [String:[Workout]] = [:]
         for workout in workouts {
-            exercises[workout.dateRange ?? "Uknown Range"]?.append(workout) // this line is not working!!!!
-            // probably because the keys do not exist yet -> "?"
+            if exercises[workout.dateRange ?? "Uknown Range"] != nil {
+                exercises[workout.dateRange ?? "Uknown Range"]?.append(workout)
+            } else {
+                exercises[workout.dateRange ?? "Uknown Range"] = [workout]
+            }
         }
         // need to sort ranges
         return exercises
