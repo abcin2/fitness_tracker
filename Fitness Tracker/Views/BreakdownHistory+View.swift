@@ -6,6 +6,16 @@ struct BreakdownHistoryView: View {
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel = ViewModel()
     
+    func reRecordWorkoutWithNoWeekOf(with data: FetchedResults<Workout>) -> (() -> Void)? {
+        for workout in data {
+            guard workout.dateRange != nil, workout.dateCompleted != nil else { return nil }
+            let newDateRange = viewModel.findDateRangeForDate(date: workout.dateCompleted ?? Date.now)
+            workout.dateRange = newDateRange
+            try? moc.save()
+        }
+        return nil
+    }
+    
     var body: some View {
         if viewModel.getDateRange(with: workouts).isEmpty {
             Text("Sorry, there is no data to display.")
@@ -51,6 +61,7 @@ struct BreakdownHistoryView: View {
                     // should check if any time exists in the week
                     // if not, do not display week at all
                 }
+            .onAppear(perform: reRecordWorkoutWithNoWeekOf(with: workouts))
             }
         }
     }
