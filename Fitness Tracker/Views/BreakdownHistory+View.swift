@@ -11,7 +11,7 @@ struct BreakdownHistoryView: View {
             guard workout.dateRange != nil, workout.dateCompleted != nil else { return nil }
             let newDateRange = viewModel.findDateRangeForDate(date: workout.dateCompleted ?? Date.now)
             workout.dateRange = newDateRange
-            try? moc.save()
+            try? moc.save() // not working..... maybe need to get the exercise first??????
         }
         return nil
     }
