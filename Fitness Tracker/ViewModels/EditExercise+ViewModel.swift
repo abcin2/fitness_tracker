@@ -7,6 +7,7 @@ extension EditExerciseView {
         
         // MARK: May be better to make minutes and seconds as pickers that range from 0...59
         @Published var timeElapsed: Double = 0.0
+        @Published var hoursElapsedString: String = ""
         @Published var minutesElapsedString: String = ""
         @Published var secondsElapsedString: String = ""
         @Published var intensityLevel: Double = 1.0
@@ -31,8 +32,9 @@ extension EditExerciseView {
         func initializeDataFromCoreDataWorkout(with data: Workout) -> Void {
             timeElapsed = data.length
             timeElapsedFormatted = formatMmSs(counter: data.length)
-            minutesElapsedString = timeElapsedFormatted.components(separatedBy: ":")[0]
-            secondsElapsedString = timeElapsedFormatted.components(separatedBy: ":")[1]
+            hoursElapsedString = timeElapsedFormatted.components(separatedBy: ":")[0]
+            minutesElapsedString = timeElapsedFormatted.components(separatedBy: ":")[1]
+            secondsElapsedString = timeElapsedFormatted.components(separatedBy: ":")[2]
             intensityLevel = data.intensity
             bikeIntensityLevel = Int(data.bikeIntensity)
             inclineLevel = data.incline
@@ -44,14 +46,18 @@ extension EditExerciseView {
         }
         
         func formatMmSs(counter: Double) -> String {
+            let hours = Int(counter) / 3600
             let minutes = Int(counter) / 60 % 60
             let seconds = Int(counter) % 60
             let milliseconds = (Int(counter*1000) % 1000) / 10
-            return String(format: "%02d:%02d:%02d", minutes, seconds, milliseconds)
+            return String(format: "%02d:%02d:%02d:%02d", hours, minutes, seconds, milliseconds)
         }
         
-        func formatTimeStringBackToDouble(minutes: String, seconds: String) -> Double {
-            return (Double(minutes)! * 60 + Double(seconds)!)
+        func formatTimeStringBackToDouble(hours: String, minutes: String, seconds: String) -> Double {
+            let hours = Double(hours)! * 3600
+            let minutes = Double(minutes)! * 60
+            let seconds = Double(seconds)!
+            return (hours + minutes + seconds)
         }
         
         let repOptions: [String] = [

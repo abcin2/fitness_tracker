@@ -30,26 +30,26 @@ extension EditExerciseView {
                         exercise.incline = viewModel.inclineLevel
                         exercise.intensity = viewModel.intensityLevel
                         exercise.bikeIntensity = Int16(viewModel.bikeIntensityLevel)
-                        exercise.length = viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
+                        exercise.length = viewModel.formatTimeStringBackToDouble(hours: viewModel.hoursElapsedString, minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         exercise.reps = viewModel.reps
                         exercise.sets = Int16(viewModel.sets)
                         
                         let existingPreviousWeek = previousWeeks.first(where: {$0.weekOf == viewModel.findDateRangeOfThisWeek(date: exercise.dateCompleted ?? Date.now)})
                         switch exercise.dateCompleted?.formatted(.dateTime.weekday()) {
                         case "Mon":
-                            existingPreviousWeek?.minutesMon += viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
+                            existingPreviousWeek?.minutesMon += viewModel.formatTimeStringBackToDouble(hours: viewModel.hoursElapsedString, minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         case "Tue":
-                            existingPreviousWeek?.minutesTue += viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
+                            existingPreviousWeek?.minutesTue += viewModel.formatTimeStringBackToDouble(hours: viewModel.hoursElapsedString, minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         case "Wed":
-                            existingPreviousWeek?.minutesWed += viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
+                            existingPreviousWeek?.minutesWed += viewModel.formatTimeStringBackToDouble(hours: viewModel.hoursElapsedString, minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         case "Thu":
-                            existingPreviousWeek?.minutesThu += viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
+                            existingPreviousWeek?.minutesThu += viewModel.formatTimeStringBackToDouble(hours: viewModel.hoursElapsedString, minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         case "Fri":
-                            existingPreviousWeek?.minutesFri += viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
+                            existingPreviousWeek?.minutesFri += viewModel.formatTimeStringBackToDouble(hours: viewModel.hoursElapsedString, minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         case "Sat":
-                            existingPreviousWeek?.minutesSat += viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
+                            existingPreviousWeek?.minutesSat += viewModel.formatTimeStringBackToDouble(hours: viewModel.hoursElapsedString, minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         case "Sun":
-                            existingPreviousWeek?.minutesSun += viewModel.formatTimeStringBackToDouble(minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
+                            existingPreviousWeek?.minutesSun += viewModel.formatTimeStringBackToDouble(hours: viewModel.hoursElapsedString, minutes: viewModel.minutesElapsedString, seconds: viewModel.secondsElapsedString)
                         default:
                             return
                         }
