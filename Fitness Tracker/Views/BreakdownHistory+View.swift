@@ -6,16 +6,6 @@ struct BreakdownHistoryView: View {
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel = ViewModel()
     
-//    init() {
-//        for workout in workouts {
-//            if workout.dateRange == nil {
-//                let newDateRange = viewModel.findDateRangeForDate(date: workout.dateCompleted ?? Date.now)
-//                workout.dateRange = newDateRange
-//                try? moc.save()
-//            }
-//        }
-//    }
-    
     var body: some View {
         if viewModel.getDateRange(with: workouts).isEmpty {
             Text("Sorry, there is no data to display.")
