@@ -61,7 +61,7 @@ struct DashboardView: View {
                     }
                     .frame(height: 250)
                     ZStack {
-                        NavigationLink(destination: BreakdownHistoryView().onTapGesture(perform: reRecordWorkoutWithNoWeekOf(with: workouts))) {
+                        NavigationLink(destination: BreakdownHistoryView()) {
                         }
                         .buttonStyle(PlainButtonStyle())
                         .opacity(0.0)
@@ -69,6 +69,7 @@ struct DashboardView: View {
                             .foregroundColor(.blue)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .fontWeight(.light)
+                            .onAppear(perform: reRecordWorkoutWithNoWeekOf(with: workouts)) // had to put this here, because there was an error when put on the view itself
                     }
                 }
             }
