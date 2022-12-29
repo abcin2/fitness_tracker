@@ -48,8 +48,6 @@ struct BreakdownHistoryView: View {
                             .frame(height: 250)
                         }
                     }
-                    // should check if any time exists in the week
-                    // if not, do not display week at all
                 }
             }
         }
