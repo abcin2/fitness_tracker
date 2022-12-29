@@ -23,7 +23,7 @@ extension EditExerciseView {
             .padding(.horizontal)
             HStack {
                 Button(action: {
-                    if let exercise = workouts.first(where: {$0.name == workout.name}) {
+                    if let exercise = workouts.first(where: {$0.id == workout.id}) {
                         exercise.freeWeightExercise = viewModel.freeWeightExercise
                         exercise.weight = viewModel.weight
                         exercise.adjustment = Int16(viewModel.machineSetting)
