@@ -102,6 +102,7 @@ struct DashboardView: View {
         }
         .padding(.bottom, 8)
         .navigationTitle("Dashboard")
+        .navigationBarBackButtonHidden(true)
     }
 }
 
