@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ExerciseHistoryView: View {
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.dateCompleted)]) var workouts: FetchedResults<Workout>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.dateCompleted)])
+    var workouts: FetchedResults<Workout>
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel = ViewModel()
     
@@ -14,7 +15,6 @@ struct ExerciseHistoryView: View {
     }
     
     var body: some View {
-        // this will eventually change to drop down menus for each day
         VStack {
             List {
                 ForEach(viewModel.uniqueDatesArray(for: workouts), id: \.self) { date in

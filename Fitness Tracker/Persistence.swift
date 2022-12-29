@@ -10,6 +10,7 @@ struct PersistenceController {
             let newWorkout = Workout(context: viewContext)
             newWorkout.id = UUID()
             newWorkout.dateCompleted = Date.now
+            newWorkout.dateRange = randomString(length: 15)
             newWorkout.category = randomString(length: 10)
             newWorkout.name = randomString(length: 6)
             newWorkout.length = randomDouble()

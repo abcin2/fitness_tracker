@@ -57,6 +57,7 @@ extension RecordExerciseView {
                         viewModel.cancelSaveWorkout()
                     }
                     Button("YES", role: .cancel) {
+                        // save workout
                         let exercise = Workout(context: moc)
                         exercise.id = UUID()
                         exercise.category = viewModel.findCategory(for: workout)
@@ -69,6 +70,7 @@ extension RecordExerciseView {
                         exercise.bikeIntensity = Int16(viewModel.bikeIntensityLevel)
                         exercise.length = viewModel.secondsElapsed
                         exercise.dateCompleted = Date.now
+                        exercise.dateRange = viewModel.findDateRangeOfThisWeek()
                         exercise.reps = viewModel.reps
                         exercise.sets = Int16(viewModel.sets)
                         try? moc.save()

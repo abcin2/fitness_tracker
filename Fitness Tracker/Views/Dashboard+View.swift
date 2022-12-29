@@ -7,6 +7,17 @@ struct DashboardView: View {
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var viewModel = ViewModel()
     
+    func reRecordWorkoutWithNoWeekOf(with data: FetchedResults<Workout>) -> (() -> Void)? {
+        for workout in data {
+            if workout.dateRange == nil {
+                let newDateRange = viewModel.findDateRangeForDate(date: workout.dateCompleted ?? Date.now)
+                workout.dateRange = newDateRange
+                try? moc.save()
+            }
+        }
+        return nil
+    }
+    
     var body: some View {
         VStack {
             List {
@@ -49,6 +60,17 @@ struct DashboardView: View {
                         )
                     }
                     .frame(height: 250)
+                    ZStack {
+                        NavigationLink(destination: BreakdownHistoryView()) {
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .opacity(0.0)
+                        Text("compare past weeks")
+                            .foregroundColor(.blue)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .fontWeight(.light)
+                            .onAppear(perform: reRecordWorkoutWithNoWeekOf(with: workouts)) // had to put this here, because there was an error when put on the view itself
+                    }
                 }
             }
             .padding(.bottom)
@@ -78,7 +100,7 @@ struct DashboardView: View {
             .padding(.horizontal)
             Spacer()
         }
-        .padding(.vertical, 8)
+        .padding(.bottom, 8)
         .navigationTitle("Dashboard")
     }
 }
