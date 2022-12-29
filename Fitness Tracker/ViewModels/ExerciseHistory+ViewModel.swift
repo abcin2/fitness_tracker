@@ -16,7 +16,8 @@ extension ExerciseHistoryView {
             for workout in workouts {
                 uniqueDates.insert(formatDateToString(date: workout.dateCompleted ?? Date.now))
             }
-            return Array(uniqueDates)
+            let sortedDates = Array(uniqueDates).sorted(by:>)
+            return sortedDates
         }
         
         func findDateRangeOfThisWeek(date: Date) -> String {
