@@ -7,7 +7,7 @@ extension BreakdownHistoryView {
         func getDateRange(with data: FetchedResults<Workout>) -> [BreakdownHistoryGraph] {
             var breakdownHistoryGraphs: [BreakdownHistoryGraph] = []
             for range in getExercisesForEachRange(with: data).keys {
-                breakdownHistoryGraphs.append(BreakdownHistoryGraph(dateRange: range, minutesPerDay: nil, graphs: getTotalTimes(with: data)))
+                breakdownHistoryGraphs.append(BreakdownHistoryGraph(dateRange: range, minutesPerDay: nil, graphs: getTotalTimes(with: data, for: range)))
             }
             return breakdownHistoryGraphs
         }
@@ -25,49 +25,51 @@ extension BreakdownHistoryView {
             return exercises
         }
         
-        func getTotalTimes(with data: FetchedResults<Workout>) -> [BreakdownHistoryGraph] {
+        func getTotalTimes(with data: FetchedResults<Workout>, for range: String) -> [BreakdownHistoryGraph] {
             var graphs: [BreakdownHistoryGraph] = []
-            for range in getDateRanges(with: data) {
-                var secondsPerDay: [String:Double] = [
-                    "Mon": 0.0,
-                    "Tue": 0.0,
-                    "Wed": 0.0,
-                    "Thu": 0.0,
-                    "Fri": 0.0,
-                    "Sat": 0.0,
-                    "Sun": 0.0
-                ]
-                for workout in data {
-                    if workout.dateRange == range {
-                        switch workout.dateCompleted?.formatted(.dateTime.weekday()) {
-                        case "Mon":
-                            secondsPerDay["Mon"]! += workout.length
-                        case "Tue":
-                            secondsPerDay["Tue"]! += workout.length
-                        case "Wed":
-                            secondsPerDay["Wed"]! += workout.length
-                        case "Thu":
-                            secondsPerDay["Thu"]! += workout.length
-                        case "Fri":
-                            secondsPerDay["Fri"]! += workout.length
-                        case "Sat":
-                            secondsPerDay["Sat"]! += workout.length
-                        case "Sun":
-                            secondsPerDay["Sun"]! += workout.length
-                        default:
-                            secondsPerDay["Uknown"]! += workout.length
+            for currentRange in getDateRanges(with: data) {
+                if currentRange == range {
+                    var secondsPerDay: [String:Double] = [
+                        "Mon": 0.0,
+                        "Tue": 0.0,
+                        "Wed": 0.0,
+                        "Thu": 0.0,
+                        "Fri": 0.0,
+                        "Sat": 0.0,
+                        "Sun": 0.0
+                    ]
+                    for workout in data {
+                        if workout.dateRange == currentRange {
+                            switch workout.dateCompleted?.formatted(.dateTime.weekday()) {
+                            case "Mon":
+                                secondsPerDay["Mon"]! += workout.length
+                            case "Tue":
+                                secondsPerDay["Tue"]! += workout.length
+                            case "Wed":
+                                secondsPerDay["Wed"]! += workout.length
+                            case "Thu":
+                                secondsPerDay["Thu"]! += workout.length
+                            case "Fri":
+                                secondsPerDay["Fri"]! += workout.length
+                            case "Sat":
+                                secondsPerDay["Sat"]! += workout.length
+                            case "Sun":
+                                secondsPerDay["Sun"]! += workout.length
+                            default:
+                                secondsPerDay["Uknown"]! += workout.length
+                            }
                         }
                     }
+                    graphs.append(BreakdownHistoryGraph(dateRange: nil, minutesPerDay: [
+                        minutesPerDay(dayOfWeek: .mon, time: (secondsPerDay["Mon"] ?? 0.0) / 60),
+                        minutesPerDay(dayOfWeek: .tue, time: (secondsPerDay["Tue"] ?? 0.0) / 60),
+                        minutesPerDay(dayOfWeek: .wed, time: (secondsPerDay["Wed"] ?? 0.0) / 60),
+                        minutesPerDay(dayOfWeek: .thu, time: (secondsPerDay["Thu"] ?? 0.0) / 60),
+                        minutesPerDay(dayOfWeek: .fri, time: (secondsPerDay["Fri"] ?? 0.0) / 60),
+                        minutesPerDay(dayOfWeek: .sat, time: (secondsPerDay["Sat"] ?? 0.0) / 60),
+                        minutesPerDay(dayOfWeek: .sun, time: (secondsPerDay["Sun"] ?? 0.0) / 60)
+                    ], graphs: nil))
                 }
-                graphs.append(BreakdownHistoryGraph(dateRange: nil, minutesPerDay: [
-                    minutesPerDay(dayOfWeek: .mon, time: (secondsPerDay["Mon"] ?? 0.0) / 60),
-                    minutesPerDay(dayOfWeek: .tue, time: (secondsPerDay["Tue"] ?? 0.0) / 60),
-                    minutesPerDay(dayOfWeek: .wed, time: (secondsPerDay["Wed"] ?? 0.0) / 60),
-                    minutesPerDay(dayOfWeek: .thu, time: (secondsPerDay["Thu"] ?? 0.0) / 60),
-                    minutesPerDay(dayOfWeek: .fri, time: (secondsPerDay["Fri"] ?? 0.0) / 60),
-                    minutesPerDay(dayOfWeek: .sat, time: (secondsPerDay["Sat"] ?? 0.0) / 60),
-                    minutesPerDay(dayOfWeek: .sun, time: (secondsPerDay["Sun"] ?? 0.0) / 60)
-                ], graphs: nil))
             }
             return graphs
         }
