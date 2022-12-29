@@ -19,10 +19,11 @@ extension RecordExerciseView {
         var fieldsDisabled: Bool = false
         
         func formatMmSs(counter: Double) -> String {
+            let hours = Int(counter) / 3600
             let minutes = Int(counter) / 60 % 60
             let seconds = Int(counter) % 60
             let milliseconds = (Int(counter*1000) % 1000) / 10
-            return String(format: "%02d:%02d:%02d", minutes, seconds, milliseconds)
+            return String(format: "%02d:%02d:%02d:%02d", hours, minutes, seconds, milliseconds)
         }
         
         func startTimer() {
